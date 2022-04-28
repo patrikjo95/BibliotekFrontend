@@ -34,6 +34,15 @@ public class ControllerFirstPage {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();}
+        stage.show();
+    }
+    @FXML
+    void cLoginAdminButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("admin-login.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
     }
 
