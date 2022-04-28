@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ControllerCustomerLogin {
+public class ControllerAdminLogin {
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -31,4 +31,4 @@ public class ControllerCustomerLogin {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();}
-    }
+}
