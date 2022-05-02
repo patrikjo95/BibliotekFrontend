@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
+   <children>
+      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="51.0" promptText="Title" />
+      <Label layoutX="211.0" layoutY="55.0" prefWidth="128.0" text="Label" textFill="#ff1414" />
+      <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="98.0" promptText="Quantity" />
+      <Label layoutX="211.0" layoutY="102.0" prefHeight="17.0" prefWidth="128.0" text="Label" textFill="#ff1414" />
+      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="152.0" promptText="Author" />
+      <Label layoutX="211.0" layoutY="156.0" prefHeight="17.0" prefWidth="128.0" text="Label" textFill="#ff1414" />
+      <TextField fx:id="genreTextField" layoutX="45.0" layoutY="207.0" promptText="Genre" />
+      <Label layoutX="211.0" layoutY="211.0" prefHeight="17.0" prefWidth="128.0" text="Label" textFill="#ff1414" />
+      <TextField fx:id="yearTextField" layoutX="45.0" layoutY="262.0" promptText="Year" />
+      <Label layoutX="211.0" layoutY="266.0" prefHeight="17.0" prefWidth="128.0" text="Label" textFill="#ff1414" />
+      <TextField fx:id="urlTextField" layoutX="45.0" layoutY="307.0" promptText="URL for image" />
+      <ImageView fitHeight="288.0" fitWidth="243.0" layoutX="328.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="211.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="View image" />
+      <Button fx:id="addBookButton" layoutX="85.0" layoutY="349.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Add Book" />
+      <Label fx:id="cConfirmationLabel" layoutX="190.0" layoutY="353.0" prefHeight="17.0" prefWidth="128.0" text="LLL" textFill="#0edd19" />
+      <Button layoutX="545.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>
