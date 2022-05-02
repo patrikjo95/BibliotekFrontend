@@ -14,7 +14,7 @@ public class ConnectionManager {
         String responseString = "";
         String line;
         try {
-            URL url = new URL("http://localhost:8080/" + request);
+            URL url = new URL("http://localhost:3306/" + request);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             connection.setRequestMethod("GET");

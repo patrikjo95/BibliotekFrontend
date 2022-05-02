@@ -31,4 +31,12 @@ public class ControllerAdminLogin {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();}
+
+    public void cGoToLoginAdmin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("adminLoginFirstPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }
