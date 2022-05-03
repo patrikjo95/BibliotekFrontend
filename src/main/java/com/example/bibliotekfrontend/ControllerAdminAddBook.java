@@ -42,6 +42,7 @@ public class ControllerAdminAddBook {
         String urltext = urlTextField.getText();
         connectionManager.sendPutRequest("/insertBook?book_title=" + title + "&book_qty="+ quantity +"&book_author="+ author +"&book_genre=" + genre + "&book_year=" + year + "&book_url=" + urltext);
         cConfirmationLabel.setText("Du har lagt till en Bok!");
+
     }
 
 }

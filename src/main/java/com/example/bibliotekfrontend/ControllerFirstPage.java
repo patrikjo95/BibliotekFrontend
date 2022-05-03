@@ -30,19 +30,13 @@ public class ControllerFirstPage {
 
     @FXML
     void cLoginCustomerButton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("customer-login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Application a = new Application();
+        a.changeScene("customer-login.fxml");
     }
     @FXML
     void cLoginAdminButton(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("admin-login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Application a = new Application();
+        a.changeScene("admin-login.fxml");
     }
-    }
+}
 

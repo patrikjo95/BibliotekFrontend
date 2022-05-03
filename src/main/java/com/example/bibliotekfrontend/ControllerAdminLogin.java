@@ -26,17 +26,12 @@ public class ControllerAdminLogin {
     private Button loginButton;
 
     public void cBackToFirstPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();}
+        Application a = new Application();
+        a.changeToFirstPage();
+    }
 
     public void cGoToLoginAdmin(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminLoginFirstPage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Application a = new Application();
+        a.changeScene("adminLoginFirstPage.fxml");
     }
 }

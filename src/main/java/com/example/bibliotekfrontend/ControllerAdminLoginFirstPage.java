@@ -31,11 +31,8 @@ public class ControllerAdminLoginFirstPage {
 
     @FXML
     private void cGoToAddBookPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("adminAddBook.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Application a = new Application();
+        a.changeScene("adminAddBook.fxml");
     }
 
     @FXML
