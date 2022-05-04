@@ -8,14 +8,15 @@ import java.net.URL;
 
 public class ConnectionManager {
 
+    private HttpURLConnection connection;
 
     public String sendGetRequest(String request) {
 
         String responseString = "";
         String line;
         try {
-            URL url = new URL("http://localhost:3306/" + request);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            URL url = new URL("http://localhost:8080" + request);
+            connection = (HttpURLConnection) url.openConnection();
 
             connection.setRequestMethod("GET");
             connection.setConnectTimeout(5000);
@@ -42,7 +43,7 @@ public class ConnectionManager {
     public String sendPutRequest(String request) {
 
         try {
-            URL url = new URL("http://localhost:8080/" + request);
+            URL url = new URL("http://localhost:8080" + request);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             connection.setRequestMethod("PUT");
