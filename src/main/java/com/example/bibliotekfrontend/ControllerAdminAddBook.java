@@ -26,6 +26,8 @@ public class ControllerAdminAddBook {
     @FXML
     private Button addBookButton;
 
+    public String response;
+
     ConnectionManager connectionManager = new ConnectionManager();
 
     public void cAddBookToDatabase(ActionEvent event) {
@@ -40,8 +42,10 @@ public class ControllerAdminAddBook {
         String genre = genreTextField.getText();
         String year = yearTextField.getText();
         String urltext = urlTextField.getText();
-        connectionManager.sendGetRequest("/insertBook?book_title=" + title + "&book_qty="+ quantity +"&book_author="+ author +"&book_genre=" + genre + "&book_year=" + year + "&book_URL=" + urltext);
+        response = connectionManager.sendGetRequest("/insertBook?new_book_title=" + title + "&new_book_qty="+ quantity +"&new_book_author="+ author +"&new_book_genre=" + genre + "&new_book_year=" + year + "&new_book_URL=" + urltext);
         cConfirmationLabel.setText("Du har lagt till en Bok!");
+
+        System.out.println(response);
 
 
     }
