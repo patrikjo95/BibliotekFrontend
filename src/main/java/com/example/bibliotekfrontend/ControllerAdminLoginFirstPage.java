@@ -14,6 +14,7 @@ import java.io.IOException;
 public class ControllerAdminLoginFirstPage {
 
 
+
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -26,7 +27,8 @@ public class ControllerAdminLoginFirstPage {
     private Button DeleteBookButton;
     @FXML
     private Button ShowBookButton;
-
+    @FXML
+    private Button cAdminLogoutButton;
 
 
     @FXML
@@ -45,5 +47,11 @@ public class ControllerAdminLoginFirstPage {
 
     @FXML
     private void cGoToShowBookPage(ActionEvent event) {
+    }
+
+    @FXML
+    private void cAdminLogoutButton(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("admin-login.fxml");
     }
 }

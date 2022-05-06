@@ -19,6 +19,6 @@
       <Button layoutX="211.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="View image" />
       <Button fx:id="addBookButton" layoutX="85.0" layoutY="349.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Add Book" />
       <Label fx:id="cConfirmationLabel" layoutX="190.0" layoutY="353.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
-      <Button layoutX="545.0" layoutY="361.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="cAddBookBackButton" layoutX="545.0" layoutY="361.0" mnemonicParsing="false" onAction="#cAddBookBackButton" text="Back" />
    </children>
 </AnchorPane>
