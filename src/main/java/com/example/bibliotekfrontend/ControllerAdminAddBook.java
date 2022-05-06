@@ -6,9 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class ControllerAdminAddBook {
 
 
+    public Button cAddBookBackButton;
     @FXML
     private Label cConfirmationLabel;
     @FXML
@@ -72,5 +75,13 @@ public class ControllerAdminAddBook {
 
         }
     }
+
+    @FXML
+    private void cAddBookBackButton(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("adminLoginFirstPage.fxml");
+    }
+
+
 
 }

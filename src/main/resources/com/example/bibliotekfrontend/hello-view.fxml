@@ -14,9 +14,9 @@
       <Button fx:id="customerLoginButton" layoutX="424.0" layoutY="37.0" mnemonicParsing="false" onAction="#cLoginCustomerButton" text="Customer Login" />
       <TableView layoutY="247.0" prefHeight="303.0" prefWidth="630.0">
         <columns>
-          <TableColumn prefWidth="262.0" text="Title" />
-          <TableColumn prefWidth="270.0" text="Author" />
-            <TableColumn prefWidth="75.0" text="Year" />
+          <TableColumn prefWidth="262.0" resizable="false" text="Title" />
+          <TableColumn prefWidth="270.0" resizable="false" text="Author" />
+            <TableColumn prefWidth="75.0" resizable="false" text="Year" />
         </columns>
       </TableView>
    </children>
