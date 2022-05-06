@@ -1,5 +1,6 @@
 package com.example.bibliotekfrontend;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -33,6 +34,7 @@ public class ControllerAdminAddBook {
 
 
     public String response;
+    Utility utility = new Utility();
 
     ConnectionManager connectionManager = new ConnectionManager();
 
@@ -42,13 +44,13 @@ public class ControllerAdminAddBook {
     }
 
     public void addBook() {
-        String title = titleTextField.getText();
-        String quantity = quantityTextField.getText();
-        System.out.println(quantity);
-        String author = authorTextField.getText();
-        String genre = genreTextField.getText();
-        String year = yearTextField.getText();
-        String urltext = urlTextField.getText();
+
+        String title = utility.encodeToURL(titleTextField.getText());
+        String quantity = utility.encodeToURL(quantityTextField.getText());
+        String author = utility.encodeToURL(authorTextField.getText());
+        String genre = utility.encodeToURL(genreTextField.getText());
+        String year = utility.encodeToURL(yearTextField.getText());
+        String urltext = utility.encodeToURL(urlTextField.getText());
         response = connectionManager.sendGetRequest("/insertBook/?new_book_title=" + title + "&new_book_qty=" + quantity + "&new_book_author=" + author + "&new_book_genre=" + genre + "&new_book_year=" + year + "&new_book_URL=" + urltext);
         System.out.println(response);
 
@@ -81,7 +83,5 @@ public class ControllerAdminAddBook {
         Application a = new Application();
         a.changeScene("adminLoginFirstPage.fxml");
     }
-
-
-
+    
 }
