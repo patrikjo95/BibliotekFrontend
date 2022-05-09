@@ -1,18 +1,24 @@
 package com.example.bibliotekfrontend;
 
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerFirstPage {
+public class ControllerFirstPage implements Initializable {
 
     private Parent root;
     private Stage stage;
@@ -26,8 +32,11 @@ public class ControllerFirstPage {
     private TextField searchBooksTextField;
     @FXML
     private Button searchBooksButton;
+    @FXML
+    private ListView<String> searchBookList;
 
 
+    ConnectionManager connectionManager = new ConnectionManager();
     @FXML
     void cLoginCustomerButton(ActionEvent event) throws IOException {
         Application a = new Application();
@@ -41,7 +50,16 @@ public class ControllerFirstPage {
 
     @FXML
     void cSearchBooksButton(ActionEvent event)throws IOException{
+        Platform.runLater(()->{
+            searchBooksTextField.getText();
+            System.out.println(searchBooksTextField.getText());
+            connectionManager.sendGetRequest("/downloadAllBooks");
 
+        });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 }
