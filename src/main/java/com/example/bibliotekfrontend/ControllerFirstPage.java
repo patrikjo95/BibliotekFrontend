@@ -1,6 +1,7 @@
 package com.example.bibliotekfrontend;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,8 +20,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.MalformedInputException;
 import java.util.ResourceBundle;
-
+import com.google.gson.Gson;
 public class ControllerFirstPage {
+
+    private Gson gson = new Gson();
+    Utility u = new Utility();
 
     private Parent root;
     private Stage stage;
@@ -53,10 +57,30 @@ public class ControllerFirstPage {
 
     @FXML
     private void cSearchBooksButton(ActionEvent event) throws IOException{
-
-            String hej = searchBooksTextField.getText();
-            response = connectionManager.sendGetRequest("/searchBook?check_book=" + hej);
+        Platform.runLater(()->{
+        String hej = searchBooksTextField.getText();
+        searchBookList.getItems().clear();
+        response = connectionManager.sendGetRequest("/searchBook?check_book=" + hej);
+        response = u.trimResponse(response);
         System.out.println(response);
+        //ObservableList<String> names = FXCollections.observableArrayList(response);
+        searchBookList.getItems().add(response);
+
+        /*
+        while (resultSet.next()) {
+            Book people = new Book(resultSet.getString("name"),
+                    resultSet.getInt("age"));
+            staffs.add(people);
+        }
+
+         */
+
+        Book[] gsonBook = gson.fromJson(response, Book[].class);
+            System.out.println(gsonBook);
+
+
+
+        });
 
             //connectionManager.sendGetRequest("/downloadAllBooks");
            // System.out.println(connectionManager.sendGetRequest("/downloadAllBooks"));
