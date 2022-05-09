@@ -15,14 +15,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.MalformedInputException;
 import java.util.ResourceBundle;
 
-public class ControllerFirstPage implements Initializable {
+public class ControllerFirstPage {
 
     private Parent root;
     private Stage stage;
     private Scene scene;
+    private String response;
 
     @FXML
     private Button customerLoginButton;
@@ -38,29 +41,29 @@ public class ControllerFirstPage implements Initializable {
 
     ConnectionManager connectionManager = new ConnectionManager();
     @FXML
-    void cLoginCustomerButton(ActionEvent event) throws IOException {
+    private void cLoginCustomerButton(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("customer-login.fxml");
     }
     @FXML
-    void cLoginAdminButton(ActionEvent event) throws IOException {
+    private void cLoginAdminButton(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("admin-login.fxml");
     }
 
     @FXML
-    void cSearchBooksButton(ActionEvent event)throws IOException{
-        Platform.runLater(()->{
-            searchBooksTextField.getText();
-            System.out.println(searchBooksTextField.getText());
-            connectionManager.sendGetRequest("/downloadAllBooks");
+    private void cSearchBooksButton(ActionEvent event) throws IOException{
 
-        });
-    }
+            String hej = searchBooksTextField.getText();
+            response = connectionManager.sendGetRequest("/searchBook?check_book=" + hej);
+        System.out.println(response);
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+            //connectionManager.sendGetRequest("/downloadAllBooks");
+           // System.out.println(connectionManager.sendGetRequest("/downloadAllBooks"));
+
 
     }
+
+
 }
 
