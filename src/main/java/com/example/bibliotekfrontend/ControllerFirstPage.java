@@ -38,5 +38,11 @@ public class ControllerFirstPage {
         Application a = new Application();
         a.changeScene("admin-login.fxml");
     }
+
+    @FXML
+    void cSearchBooksButton(ActionEvent event)throws IOException{
+
+
+    }
 }
 
