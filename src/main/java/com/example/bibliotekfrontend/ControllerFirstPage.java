@@ -1,5 +1,7 @@
 package com.example.bibliotekfrontend;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,6 +16,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -21,6 +26,11 @@ import java.net.URL;
 import java.nio.charset.MalformedInputException;
 import java.util.ResourceBundle;
 import com.google.gson.Gson;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
 public class ControllerFirstPage {
 
     private Gson gson = new Gson();
@@ -56,15 +66,35 @@ public class ControllerFirstPage {
     }
 
     @FXML
-    private void cSearchBooksButton(ActionEvent event) throws IOException{
+    private void cSearchBooksButton(ActionEvent event){
         Platform.runLater(()->{
         String hej = searchBooksTextField.getText();
         searchBookList.getItems().clear();
         response = connectionManager.sendGetRequest("/searchBook?check_book=" + hej);
         response = u.trimResponse(response);
-        System.out.println(response);
+        System.out.println("Response: " + response);
         //ObservableList<String> names = FXCollections.observableArrayList(response);
-        searchBookList.getItems().add(response);
+
+
+            JSONArray array = new JSONArray(response);
+
+
+            for(int i = 0; i < array.length(); i++){
+                JSONObject object = array.getJSONObject(i);
+                searchBookList.getItems().add(object.getString("book_title"));
+                searchBookList.getItems().add(object.getString("book_author"));
+                searchBookList.getItems().add(object.getString("book_genre"));
+                searchBookList.getItems().add(object.getString("book_year"));
+                System.out.println(object.getString("book_title"));
+                System.out.print(object.getString("book_author"));
+                System.out.print(object.getString("book_genre"));
+                System.out.print(object.getString("book_year"));
+            }
+
+
+
+
+
 
         /*
         while (resultSet.next()) {
@@ -75,8 +105,8 @@ public class ControllerFirstPage {
 
          */
 
-        Book[] gsonBook = gson.fromJson(response, Book[].class);
-            System.out.println(gsonBook);
+        /*Book[] gsonBook = gson.fromJson(response, Book[].class);
+            System.out.println(gsonBook);*/
 
 
 

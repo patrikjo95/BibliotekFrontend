@@ -2,14 +2,14 @@ package com.example.bibliotekfrontend;
 
 
 public class Book {
-    private String ID_book;
-    private String book_title;
-    private String book_qty;
-    private String book_author;
-    private String book_genre;
-    private String book_year;
-    private String book_URL;
-    private String check_book;
+    public String ID_book;
+    public String book_title;
+    public String book_qty;
+    public String book_author;
+    public String book_genre;
+    public String book_year;
+    public String book_URL;
+    public String check_book;
 
     public Book(String ID_book, String book_title, String book_qty, String book_author, String book_genre, String book_year, String book_URL) {
         this.ID_book = ID_book;
