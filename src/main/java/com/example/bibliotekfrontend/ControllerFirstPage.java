@@ -49,7 +49,9 @@ public class ControllerFirstPage {
     @FXML
     private void cLoginAdminButton(ActionEvent event) throws IOException {
         Application a = new Application();
-        a.changeScene("admin-login.fxml");
+        //a.changeScene("admin-login.fxml");
+        //Tempåräry changeSchene
+        a.changeScene("adminDeleteBook.fxml");
     }
 
     @FXML
@@ -66,36 +68,15 @@ public class ControllerFirstPage {
 
             for(int i = 0; i < array.length(); i++){
                 JSONObject object = array.getJSONObject(i);
-                searchBookList.getItems().add("Title: " + object.getString("book_title") + " Author: " + object.getString("book_author") + " Genre: " + object.getString("book_genre") + " Publishing year: " + object.getString("book_year"));
+                searchBookList.getItems().add("Title: " + object.getString("book_title") +  " | " +  "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Publishing year: " + object.getString("book_year") + " | " + "ISBN: " + object.getInt("ISBN"));
 
             }
 
-
-
-
-
-
-        /*
-        while (resultSet.next()) {
-            Book people = new Book(resultSet.getString("name"),
-                    resultSet.getInt("age"));
-            staffs.add(people);
-        }
-
-         */
-
-        /*Book[] gsonBook = gson.fromJson(response, Book[].class);
-            System.out.println(gsonBook);*/
-
-
-
         });
 
-            //connectionManager.sendGetRequest("/downloadAllBooks");
-           // System.out.println(connectionManager.sendGetRequest("/downloadAllBooks"));
-
-
     }
+
+
 
 
 }
