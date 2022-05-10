@@ -1,15 +1,8 @@
 package com.example.bibliotekfrontend;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,14 +14,8 @@ import org.json.JSONObject;
 
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.charset.MalformedInputException;
-import java.util.ResourceBundle;
+
 import com.google.gson.Gson;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 
 public class ControllerFirstPage {
@@ -68,27 +55,19 @@ public class ControllerFirstPage {
     @FXML
     private void cSearchBooksButton(ActionEvent event){
         Platform.runLater(()->{
-        String hej = searchBooksTextField.getText();
+        String input = u.encodeToURL(searchBooksTextField.getText());
         searchBookList.getItems().clear();
-        response = connectionManager.sendGetRequest("/searchBook?check_book=" + hej);
+        response = connectionManager.sendGetRequest("/searchBook?check_book=" + input);
         response = u.trimResponse(response);
-        System.out.println("Response: " + response);
-        //ObservableList<String> names = FXCollections.observableArrayList(response);
-
+        //System.out.println("Response: " + response);
 
             JSONArray array = new JSONArray(response);
 
 
             for(int i = 0; i < array.length(); i++){
                 JSONObject object = array.getJSONObject(i);
-                searchBookList.getItems().add(object.getString("book_title"));
-                searchBookList.getItems().add(object.getString("book_author"));
-                searchBookList.getItems().add(object.getString("book_genre"));
-                searchBookList.getItems().add(object.getString("book_year"));
-                System.out.println(object.getString("book_title"));
-                System.out.print(object.getString("book_author"));
-                System.out.print(object.getString("book_genre"));
-                System.out.print(object.getString("book_year"));
+                searchBookList.getItems().add("Title: " + object.getString("book_title") + " Author: " + object.getString("book_author") + " Genre: " + object.getString("book_genre") + " Publishing year: " + object.getString("book_year"));
+
             }
 
 

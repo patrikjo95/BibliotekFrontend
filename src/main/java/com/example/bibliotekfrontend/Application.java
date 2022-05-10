@@ -16,7 +16,7 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         newStage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("fisrtPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("firstPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Best Library Evah");
         stage.setScene(scene);
