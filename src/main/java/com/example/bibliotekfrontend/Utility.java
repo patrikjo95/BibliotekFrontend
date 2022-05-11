@@ -2,6 +2,7 @@ package com.example.bibliotekfrontend;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 
 public class Utility {
 
