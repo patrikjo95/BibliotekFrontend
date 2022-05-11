@@ -42,7 +42,9 @@ public class ControllerAdminLoginFirstPage {
     }
 
     @FXML
-    private void cGoToDeleteBookPage(ActionEvent event) {
+    private void cGoToDeleteBookPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("adminDeleteBook.fxml");
     }
 
     @FXML
