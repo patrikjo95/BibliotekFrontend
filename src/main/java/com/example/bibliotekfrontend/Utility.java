@@ -8,6 +8,8 @@ public class Utility {
     public String encodeToURL(String inputString) {
         return URLEncoder.encode(inputString, StandardCharsets.UTF_8);
     }
+
+
     public String trimResponse(String response){
         int first = 0;
         int last = 0;
@@ -23,4 +25,16 @@ public class Utility {
 
         return trimmedStringResponse;
     }
+
+    public String getIsbnFromString(String str){
+
+        String [] splitString = str.split(" ");
+
+
+        return splitString[1];
+
+    }
+
+
+
 }
