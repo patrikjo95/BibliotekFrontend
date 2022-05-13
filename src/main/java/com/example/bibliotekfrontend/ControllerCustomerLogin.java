@@ -30,4 +30,10 @@ public class ControllerCustomerLogin {
         a.changeToFirstPage();
 
     }
+
+    @FXML
+    private void cToRegisterPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("customerRegister.fxml");
+    }
 }
