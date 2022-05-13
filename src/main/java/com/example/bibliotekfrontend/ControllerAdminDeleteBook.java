@@ -5,21 +5,23 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ControllerAdminDeleteBook {
 
+    @FXML
+    private Label deleteBookErrorLabel;
+    @FXML
+    private Label searchBookErrorLabel;
     @FXML
     private TextField searchBooksTextField;
     @FXML
@@ -66,9 +68,9 @@ public class ControllerAdminDeleteBook {
         searchBookList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                String currentIsbn = searchBookList.getSelectionModel().getSelectedItem();
-                System.out.println(currentIsbn);
-                isbnTextField.setText(currentIsbn);
+                String selectedBookString = searchBookList.getSelectionModel().getSelectedItem();
+                String selectedIsbn = u.getIsbnFromString(selectedBookString);
+                isbnTextField.setText(String.valueOf(selectedIsbn));
             }
         });
     }
@@ -80,4 +82,24 @@ public class ControllerAdminDeleteBook {
         a.changeScene("adminLoginFirstPage.fxml");
     }
 
+    @FXML
+    public void cDeleteBookButton(ActionEvent event) {
+        String ISBN = u.encodeToURL(isbnTextField.getText());
+        response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + ISBN);
+        //System.out.println("response:" + response);
+
+        if(response.contains("this is not int")){
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setText("Please enter a number");
+        }else if(response.contains("int incorrect")){
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setText("That ISBN does not exist");
+        }else if(response.contains("null")){
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.LIGHTGREEN);
+            deleteBookErrorLabel.setText("Book with ISBN " + ISBN + " deleted");
+        }
+    }
 }
+
+
