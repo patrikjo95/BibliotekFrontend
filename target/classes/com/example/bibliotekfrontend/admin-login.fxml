@@ -5,13 +5,23 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLogin">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLogin">
     <children>
-        <Label layoutX="256.0" layoutY="62.0" prefHeight="25.0" prefWidth="89.0" text="Admin Login" />
-        <TextField layoutX="226.0" layoutY="117.0" promptText="Username" />
-        <PasswordField layoutX="226.0" layoutY="157.0" promptText="Password" />
-        <Button fx:id="loginAdminButton" layoutX="275.0" layoutY="217.0" mnemonicParsing="false" onAction="#cGoToLoginAdmin" text="Login" />
-        <Button fx:id="backToFrontPageButton" layoutX="44.0" layoutY="336.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Back to front page" />
+        <Label alignment="CENTER" layoutX="166.0" layoutY="117.0" prefHeight="53.0" prefWidth="270.0" text="Admin Login">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+        <TextField layoutX="226.0" layoutY="208.0" promptText="Username" />
+        <PasswordField layoutX="226.0" layoutY="250.0" promptText="Password" />
+        <Button fx:id="loginAdminButton" layoutX="278.0" layoutY="296.0" mnemonicParsing="false" onAction="#cGoToLoginAdmin" text="Login">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+        <Button fx:id="backToFrontPageButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Back to front page">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
     </children>
 </AnchorPane>
