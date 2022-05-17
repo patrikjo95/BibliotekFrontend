@@ -6,19 +6,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
    <children>
-      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="51.0" promptText="Title" />
+      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="50.0" promptText="Title" />
       <Label fx:id="cErrorLabel" alignment="CENTER" layoutX="45.0" layoutY="25.0" prefWidth="128.0" text="FELMEDDELANDE" textAlignment="CENTER" textFill="#ff1414" visible="false" />
-      <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="98.0" promptText="Quantity" />
-      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="152.0" promptText="Author" />
-      <TextField fx:id="genreTextField" layoutX="45.0" layoutY="207.0" promptText="Genre" />
-      <TextField fx:id="yearTextField" layoutX="45.0" layoutY="262.0" promptText="Year" />
-      <TextField fx:id="urlTextField" layoutX="45.0" layoutY="307.0" promptText="URL for image" />
-      <ImageView fitHeight="288.0" fitWidth="243.0" layoutX="328.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="211.0" layoutY="307.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="View image" />
-      <Button fx:id="addBookButton" layoutX="85.0" layoutY="349.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Add Book" />
-      <Label fx:id="cConfirmationLabel" layoutX="190.0" layoutY="353.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
-      <Button fx:id="cAddBookBackButton" layoutX="545.0" layoutY="361.0" mnemonicParsing="false" onAction="#cAddBookBackButton" text="Back" />
+      <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="110.0" promptText="Quantity" />
+      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="170.0" promptText="Author" />
+      <TextField fx:id="genreTextField" layoutX="45.0" layoutY="230.0" promptText="Genre" />
+      <TextField fx:id="yearTextField" layoutX="45.0" layoutY="290.0" promptText="Year" />
+      <TextField fx:id="urlTextField" layoutX="45.0" layoutY="350.0" promptText="URL for image" />
+      <ImageView fitHeight="338.0" fitWidth="273.0" layoutX="298.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="207.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="View image" />
+      <Button fx:id="addBookButton" layoutX="85.0" layoutY="405.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Add Book" />
+      <Label fx:id="cConfirmationLabel" layoutX="194.0" layoutY="409.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
+      <Button fx:id="cAddBookBackButton" layoutX="16.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Back" />
    </children>
 </AnchorPane>

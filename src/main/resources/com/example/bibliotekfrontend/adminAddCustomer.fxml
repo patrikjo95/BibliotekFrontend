@@ -17,10 +17,12 @@
       <TextField fx:id="YMDXField" layoutX="226.0" layoutY="203.0" promptText="YYYYMMDDXXXX" />
       <PasswordField fx:id="pinField1" layoutX="226.0" layoutY="250.0" promptText="PIN" />
       <PasswordField fx:id="pinField2" layoutX="226.0" layoutY="282.0" promptText="Confirm PIN" />
-      <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Register with Bank-ID" />
+      <Button alignment="CENTER" layoutX="270.0" layoutY="336.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Register" />
       <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToAdminFirstPage" text="Back" />
       <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="YYYYMMDDXXXX" />
-      <Label layoutX="134.0" layoutY="250.0" prefHeight="25.0" prefWidth="76.0" text="4 Number PIN" />
+      <Label layoutX="112.0" layoutY="250.0" prefHeight="25.0" prefWidth="97.0" text="Four Number PIN" />
       <Label fx:id="samePinErrorLabel" layoutX="382.0" layoutY="254.0" prefHeight="17.0" prefWidth="192.0" />
+      <Label fx:id="registerConfirmationLabel" alignment="CENTER" layoutX="193.0" layoutY="175.0" prefHeight="17.0" prefWidth="214.0" textFill="#26d329" />
+      <Label fx:id="errorRegisterConfirmationLabel" alignment="CENTER" layoutX="132.0" layoutY="313.0" prefHeight="17.0" prefWidth="337.0" textFill="#d74e4e" />
    </children>
 </AnchorPane>
