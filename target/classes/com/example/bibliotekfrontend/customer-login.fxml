@@ -9,18 +9,18 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerLogin">
    <children>
-      <Label alignment="CENTER" layoutX="182.0" layoutY="112.0" text="Customer Login">
+      <Label alignment="CENTER" layoutX="174.0" layoutY="112.0" text="Customer Login">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutX="251.0" layoutY="197.0" text="YYYY-MM-DD-XXXX">
+      <Label alignment="CENTER" layoutX="251.0" layoutY="197.0" text="YYYYMMDDXXXX">
          <font>
             <Font name="System Italic" size="11.0" />
          </font>
       </Label>
       <TextField layoutX="226.0" layoutY="223.0" promptText=" " />
       <PasswordField layoutX="226.0" layoutY="263.0" promptText="PIN" />
-      <Button layoutX="244.0" layoutY="319.0" mnemonicParsing="false" text="Login">
+      <Button layoutX="279.0" layoutY="297.0" mnemonicParsing="false" text="Login">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
@@ -28,12 +28,12 @@
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <Button fx:id="toRegisterButton" layoutX="308.0" layoutY="319.0" mnemonicParsing="false" onAction="#cToRegisterPage" text="Register!">
+      <Button fx:id="toRegisterButton" layoutX="270.0" layoutY="414.0" mnemonicParsing="false" onAction="#cToRegisterPage" text="Register!">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <Label layoutX="177.0" layoutY="296.0" text="Click Register if you want to become a member!">
+      <Label layoutX="178.0" layoutY="384.0" text="Click Register if you want to become a member!">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>

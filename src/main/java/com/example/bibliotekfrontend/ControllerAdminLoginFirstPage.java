@@ -56,4 +56,9 @@ public class ControllerAdminLoginFirstPage {
         Application a = new Application();
         a.changeScene("admin-login.fxml");
     }
+    @FXML
+    private void cGoToAddCustomerAdminPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("adminAddCustomer.fxml");
+    }
 }

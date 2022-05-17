@@ -14,12 +14,12 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="203.0" promptText="YYYY-MM-DD-XXXX" />
-      <Button layoutX="235.0" layoutY="328.0" mnemonicParsing="false" text="Register with Bank-ID" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToLoginButton" text="Back" />
+      <TextField layoutX="226.0" layoutY="203.0" promptText="YYYYMMDDXXXX" />
       <PasswordField layoutX="226.0" layoutY="250.0" promptText="PIN" />
       <PasswordField layoutX="226.0" layoutY="294.0" promptText="Confirm PIN" />
-      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="YYYY-MM-DD-XXXX" />
+      <Button layoutX="235.0" layoutY="339.0" mnemonicParsing="false" text="Register with Bank-ID" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToLoginButton" text="Back" />
+      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="YYYYMMDDXXXX" />
       <Label layoutX="134.0" layoutY="250.0" prefHeight="25.0" prefWidth="76.0" text="4 Number PIN" />
    </children>
 </AnchorPane>
