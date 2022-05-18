@@ -8,13 +8,13 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminDeleteBook">
    <children>
-      <TextField fx:id="searchBooksTextField" layoutX="45.0" layoutY="51.0" promptText="Title" />
-      <TextField fx:id="isbnTextField" layoutX="45.0" layoutY="175.0" promptText="ISBN" />
+      <TextField fx:id="searchBooksTextField" layoutX="45.0" layoutY="51.0" promptText="Search" />
+      <TextField fx:id="bookIDTextField" layoutX="45.0" layoutY="175.0" promptText="ID" />
       <Button fx:id="deleteBookButton" layoutX="79.0" layoutY="212.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Delete Book" />
       <Button fx:id="cBackButton" layoutX="544.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Back" />
       <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Search" />
       <ListView fx:id="searchBookList" layoutX="241.0" layoutY="25.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
-      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="searchBookErrorLabel" alignment="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

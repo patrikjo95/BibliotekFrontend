@@ -51,6 +51,7 @@ public class ControllerFirstPage {
         Application a = new Application();
         a.changeScene("admin-login.fxml");
 
+
     }
 
     @FXML
@@ -58,7 +59,7 @@ public class ControllerFirstPage {
         Platform.runLater(()->{
         String input = u.encodeToURL(searchBooksTextField.getText());
         searchBookList.getItems().clear();
-        response = connectionManager.sendGetRequest("/searchBook?check_book=" + input);
+        response = connectionManager.sendGetRequest("/search_for_a_book_everyone?check_book=" + input);
         response = u.trimResponse(response);
         //System.out.println("Response: " + response);
 
@@ -67,12 +68,16 @@ public class ControllerFirstPage {
 
             for(int i = 0; i < array.length(); i++){
                 JSONObject object = array.getJSONObject(i);
-                searchBookList.getItems().add("Title: " + object.getString("book_title") +  " | " +  "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Publishing year: " + object.getString("book_year") + " | " + "ISBN: " + object.getInt("ISBN"));
+                searchBookList.getItems().add("Title: " + object.getString("book_title") +  " | " +  "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Publishing year: " + object.getString("book_year"));
 
             }
 
         });
 
     }
+
+
+
+
 }
 

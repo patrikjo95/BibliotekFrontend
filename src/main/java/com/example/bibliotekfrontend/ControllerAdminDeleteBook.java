@@ -25,7 +25,7 @@ public class ControllerAdminDeleteBook {
     @FXML
     private TextField searchBooksTextField;
     @FXML
-    private TextField isbnTextField;
+    private TextField bookIDTextField;
     @FXML
     private Button deleteBookButton;
     @FXML
@@ -45,7 +45,7 @@ public class ControllerAdminDeleteBook {
         Platform.runLater(()->{
             String input = u.encodeToURL(searchBooksTextField.getText());
             searchBookList.getItems().clear();
-            response = connectionManager.sendGetRequest("/searchBook?check_book=" + input);
+            response = connectionManager.sendGetRequest("/search_for_a_book_admin?check_book=" + input);
             response = u.trimResponse(response);
             //System.out.println("Response: " + response);
 
@@ -54,7 +54,7 @@ public class ControllerAdminDeleteBook {
 
             for(int i = 0; i < array.length(); i++){
                 object = array.getJSONObject(i);
-                searchBookList.getItems().add("ISBN: " + object.getInt("ISBN") +  " | " + "Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " +  "Publishing year: " + object.getString("book_year"));
+                searchBookList.getItems().add("ID: " + object.getInt("ID_book") +  " | " + "Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " +  "Publishing year: " + object.getString("book_year") + " | " + "ISBN: " + object.getInt("ISBN_book"));
 
             }
 
@@ -70,7 +70,7 @@ public class ControllerAdminDeleteBook {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 String selectedBookString = searchBookList.getSelectionModel().getSelectedItem();
                 String selectedIsbn = u.getIsbnFromString(selectedBookString);
-                isbnTextField.setText(String.valueOf(selectedIsbn));
+                bookIDTextField.setText(String.valueOf(selectedIsbn));
             }
         });
     }
@@ -84,20 +84,22 @@ public class ControllerAdminDeleteBook {
 
     @FXML
     public void cDeleteBookButton(ActionEvent event) {
-        String ISBN = u.encodeToURL(isbnTextField.getText());
-        response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + ISBN);
+        String bookID = u.encodeToURL(bookIDTextField.getText());
+        response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + bookID);
         //System.out.println("response:" + response);
 
         if(response.contains("this is not int")){
             deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.RED);
             deleteBookErrorLabel.setText("Please enter a number");
         }else if(response.contains("int incorrect")){
             deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setText("That ISBN does not exist");
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("That ID does not exist");
         }else if(response.contains("null")){
             deleteBookErrorLabel.setVisible(true);
             deleteBookErrorLabel.setTextFill(Color.LIGHTGREEN);
-            deleteBookErrorLabel.setText("Book with ISBN " + ISBN + " deleted");
+            deleteBookErrorLabel.setText("Book with ID " + bookID + " deleted");
         }
     }
 }
