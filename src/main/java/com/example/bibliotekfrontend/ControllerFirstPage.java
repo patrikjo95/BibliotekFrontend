@@ -49,9 +49,8 @@ public class ControllerFirstPage {
     @FXML
     private void cLoginAdminButton(ActionEvent event) throws IOException {
         Application a = new Application();
-        //a.changeScene("admin-login.fxml");
-        //Tempåräry changeSchene
-        a.changeScene("adminDeleteBook.fxml");
+        a.changeScene("admin-login.fxml");
+
     }
 
     @FXML
