@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="160.0" prefWidth="246.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
+   <children>
+      <Label layoutX="115.0" layoutY="58.0" text="Confirmed!" textFill="#2cda23">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="107.0" layoutY="99.0" mnemonicParsing="false" onAction="#cGoBackToRegister" text="OK" />
+      <Label layoutX="35.0" layoutY="58.0" text="Bank-ID">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+   </children>
+   <effect>
+      <Lighting>
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant />
+         </light>
+      </Lighting>
+   </effect>
+</AnchorPane>
