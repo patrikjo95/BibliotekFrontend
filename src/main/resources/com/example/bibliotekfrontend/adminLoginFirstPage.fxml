@@ -23,7 +23,7 @@
                         <Button fx:id="DeleteBookButton" layoutX="54.0" layoutY="183.0" mnemonicParsing="false" onAction="#cGoToDeleteBookPage" text="Delete Book" />
                         <ImageView fitHeight="253.0" fitWidth="402.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/Logo_bibliotek%20(1).png" />
+                              <Image url="@images/Logo_bibliotek.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="257.0" fitWidth="281.0" layoutX="282.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
