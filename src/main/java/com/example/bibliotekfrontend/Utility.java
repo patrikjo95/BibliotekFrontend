@@ -29,7 +29,7 @@ public class Utility {
 
     public String getIsbnFromString(String str){
 
-        String [] splitString = str.split(" ");
+        String[] splitString = str.split(" ");
 
 
         return splitString[1];
