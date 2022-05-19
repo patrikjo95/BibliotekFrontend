@@ -20,7 +20,7 @@
       </Label>
       <TextField layoutX="226.0" layoutY="223.0" promptText=" " />
       <PasswordField layoutX="226.0" layoutY="263.0" promptText="PIN" />
-      <Button layoutX="279.0" layoutY="297.0" mnemonicParsing="false" text="Login">
+      <Button layoutX="279.0" layoutY="297.0" mnemonicParsing="false" onAction="#cToLoginCustomerFirstPage" text="Login">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerFirstPage">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a18a68" height="550.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c39351" height="563.0" layoutX="-7.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="614.0" />
       <TextField fx:id="searchBooksTextField" layoutX="201.0" layoutY="144.0" promptText="Title, Author etc.">
          <font>
             <Font size="16.0" />

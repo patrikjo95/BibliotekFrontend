@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,5 +36,11 @@ public class ControllerCustomerLogin {
     private void cToRegisterPage(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("customerRegister.fxml");
+    }
+
+    @FXML
+    private void cToLoginCustomerFirstPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("customerLoginFirstPage.fxml");
     }
 }
