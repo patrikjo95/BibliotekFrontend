@@ -51,7 +51,7 @@ public class ControllerCustomerLogin {
     }
 
     @FXML
-    private void cSendLoginDataToBackEnd(ActionEvent event) throws IOException {
+    private void cSendLoginDataToBackEnd(ActionEvent event){
         String customer_pnr = utility.encodeToURL(usernameTextField.getText());
         String customer_pin = utility.encodeToURL(passwordTextField.getText());
         response = connectionManager.sendGetRequest("/login_customer/?test_pnr=" + customer_pnr + "&test_pin=" + customer_pin);
