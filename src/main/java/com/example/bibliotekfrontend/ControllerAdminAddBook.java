@@ -1,6 +1,5 @@
 package com.example.bibliotekfrontend;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -40,7 +39,7 @@ public class ControllerAdminAddBook {
 
     public void cAddBookToDatabase(ActionEvent event) {
 
-    addBook();
+        addBook();
     }
 
     public void addBook() {
@@ -83,5 +82,5 @@ public class ControllerAdminAddBook {
         Application a = new Application();
         a.changeScene("adminLoginFirstPage.fxml");
     }
-    
+
 }
