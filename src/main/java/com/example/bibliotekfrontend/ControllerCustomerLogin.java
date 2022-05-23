@@ -7,14 +7,19 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class ControllerCustomerLogin {
+
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -24,12 +29,17 @@ public class ControllerCustomerLogin {
 
     ConnectionManager connectionManager = new ConnectionManager();
 
+    // ControllerCustomerLoginFirstPage controllerCustomerLoginFirstPage = new ControllerCustomerLoginFirstPage();
+
     @FXML
     private TextField usernameTextField;
     @FXML
     private PasswordField passwordTextField;
     @FXML
     private Button loginButton;
+    @FXML
+    private Label errorLabelLoginCustomer;
+
 
     @FXML
     private void cBackToFirstPage(ActionEvent event) throws IOException {
@@ -56,28 +66,50 @@ public class ControllerCustomerLogin {
         String customer_pin = utility.encodeToURL(passwordTextField.getText());
         response = connectionManager.sendGetRequest("/login_customer/?test_pnr=" + customer_pnr + "&test_pin=" + customer_pin);
         System.out.println(response);
-/*
+
+        // errorLabelLoginCustomer
+
         if (response.contains("wrong pnr")) {
-            cConfirmationLabel.setVisible(false);
-            cErrorLabel.setVisible(true);
-            cErrorLabel.setText("That book already exists");
+            //cConfirmationLabel.setVisible(false);
+            errorLabelLoginCustomer.setVisible(true);
+            errorLabelLoginCustomer.setTextFill(Color.RED);
+            errorLabelLoginCustomer.setText("This personnummer has not been registered yet.");
         } else if (response.contains("wrong pin")) {
-            cConfirmationLabel.setVisible(false);
-            cErrorLabel.setVisible(true);
-            cErrorLabel.setText("That year is not valid");
-        } else if (response.contains("Its not year")) {
-            cConfirmationLabel.setVisible(false);
-            cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Please enter a year");
-        } else if (response.contains("error qty int")) {
-            cConfirmationLabel.setVisible(false);
-            cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Incorrect quantity");
-        } else if (response.contains("0")) {
+            //cConfirmationLabel.setVisible(false);
+            errorLabelLoginCustomer.setVisible(true);
+            errorLabelLoginCustomer.setTextFill(Color.RED);
+            errorLabelLoginCustomer.setText("Wrong pin!");
+        } else {
+            try {
+                //File customer_pnr_txt_file = new File("customer_pnr_txt_file.txt");
+                /*
+                if (customer_pnr_txt_file.createNewFile()) {
+                    System.out.println("File created: " + customer_pnr_txt_file.getName());
+                } else {
+                    System.out.println("File already exists.");
+                }
+                 */
+                FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
+                myWriter.write(customer_pnr);
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+                Application a = new Application();
+                a.changeScene("customerLoginFirstPage.fxml");
+                // controllerCustomerLoginFirstPage.showCustomerLoginPNR();
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+        }
+        /*
+        else if (response.contains()) {
             cConfirmationLabel.setVisible(true);
-            cErrorLabel.setVisible(false);
+            errorLabelLoginCustomer.setVisible(false);
             cConfirmationLabel.setText("Du har lagt till en Bok!");
         }
- */
+
+         */
+
+
     }
 }

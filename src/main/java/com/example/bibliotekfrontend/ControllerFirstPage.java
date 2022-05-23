@@ -75,9 +75,5 @@ public class ControllerFirstPage {
         });
 
     }
-
-
-
-
 }
 
