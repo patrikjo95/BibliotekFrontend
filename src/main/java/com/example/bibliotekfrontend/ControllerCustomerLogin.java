@@ -89,7 +89,7 @@ public class ControllerCustomerLogin {
                     System.out.println("File already exists.");
                 }
                  */
-                FileWriter myWriter = new FileWriter("C:\\Users\\toros\\IdeaProjects\\BibliotekFrontend\\src\\main\\resources\\com\\example\\bibliotekfrontend\\customer_pnr_txt_file.txt");
+                FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
                 myWriter.write(customer_pnr);
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
