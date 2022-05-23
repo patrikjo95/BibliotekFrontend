@@ -14,7 +14,7 @@
       <Button fx:id="cBackButton" layoutX="544.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Back" />
       <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Search" />
       <ListView fx:id="searchBookList" layoutX="241.0" layoutY="25.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
-      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textFill="RED" visible="false" />
+      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
    </children>
 </AnchorPane>

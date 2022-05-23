@@ -21,7 +21,7 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
         String customer_pnr_from_file = "";
         //
         try {
-            File file = new File("C:\\Users\\toros\\IdeaProjects\\BibliotekFrontend\\src\\main\\resources\\com\\example\\bibliotekfrontend\\customer_pnr_txt_file.txt");
+            File file = new File("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
             Scanner scanner = new Scanner(file);
             customer_pnr_from_file = scanner.next();
             //while (scanner.hasNext()) {
