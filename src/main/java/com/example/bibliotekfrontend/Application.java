@@ -35,6 +35,7 @@ public class Application extends javafx.application.Application {
     public void changeToFirstPage()throws IOException{
         start(newStage);
     }
+
     public void openPopup(String fxml)throws IOException{
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -46,33 +47,9 @@ public class Application extends javafx.application.Application {
         stage.setResizable(false);
         stage.show();
     }
-    public void closePopup(String fxml)throws IOException{
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.close();
-    }
 
     public static void main(String[] args) {
         launch();
     }
 
-    public static void openPopup(String fxml)throws IOException{
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
-
-    }
-
-    public void closePopup(String fxml)throws IOException{
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.close();
-    }
 }

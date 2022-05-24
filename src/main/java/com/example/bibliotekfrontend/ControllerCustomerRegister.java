@@ -101,6 +101,8 @@ public class ControllerCustomerRegister {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
+
+
     public void cGoBackToRegister(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
