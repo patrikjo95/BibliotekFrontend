@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="160.0" prefWidth="246.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
    <children>
-      <Label layoutX="28.0" layoutY="58.0" text="Please open">
+      <Label layoutX="28.0" layoutY="58.0" text="Var god öppna">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
