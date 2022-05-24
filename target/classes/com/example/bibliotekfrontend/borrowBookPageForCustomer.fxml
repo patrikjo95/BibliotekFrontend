@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.control.ListView?>
+<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerBorrowBookPageForCustomer">
+   <children>
+      <Label layoutX="266.0" layoutY="14.0" text="Borrow Book" />
+      <ListView fx:id="searchBookList" layoutX="241.0" layoutY="25.0"  prefHeight="460.0" prefWidth="344.0" /> // include also ?? onMouseClicked="#cListView" ??
+      <Button fx:id="backToCustomerFirstPageButton" layoutX="25.0" layoutY="500.0" mnemonicParsing="false" onAction="#backToCustomerFirstPage" text="Back" />
+   </children>
+</AnchorPane>
