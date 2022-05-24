@@ -79,23 +79,14 @@ public class ControllerCustomerLogin {
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
             errorLabelLoginCustomer.setText("Wrong pin!");
-        } else {
+        } else if (response.contains(customer_pnr)){
             try {
-                //File customer_pnr_txt_file = new File("customer_pnr_txt_file.txt");
-                /*
-                if (customer_pnr_txt_file.createNewFile()) {
-                    System.out.println("File created: " + customer_pnr_txt_file.getName());
-                } else {
-                    System.out.println("File already exists.");
-                }
-                 */
                 FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
                 myWriter.write(customer_pnr);
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 Application a = new Application();
                 a.changeScene("customerLoginFirstPage.fxml");
-                // controllerCustomerLoginFirstPage.showCustomerLoginPNR();
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();

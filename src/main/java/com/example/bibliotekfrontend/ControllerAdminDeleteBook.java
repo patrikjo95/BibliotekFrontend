@@ -9,8 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,6 +22,16 @@ import java.io.IOException;
 
 public class ControllerAdminDeleteBook {
 
+    @FXML
+    private AnchorPane helpPopUp;
+    @FXML
+    private Label de;
+    @FXML
+    private AnchorPane helpTextpopupPane;
+    @FXML
+    private Text helpText;
+    @FXML
+    private Label colorllabel;
     @FXML
     private Label deleteBookErrorLabel;
     @FXML
@@ -102,6 +116,14 @@ public class ControllerAdminDeleteBook {
             deleteBookErrorLabel.setText("Book with ID " + bookID + " deleted");
         }
     }
+
+    @FXML
+    private void cHelpPopupClose(MouseEvent mouseEvent){
+        helpPopUp.setVisible(false);
+    }
+
+    @FXML
+    private void cHelpPopup(MouseEvent mouseEvent){
+        helpPopUp.setVisible(true);
+    }
 }
-
-
