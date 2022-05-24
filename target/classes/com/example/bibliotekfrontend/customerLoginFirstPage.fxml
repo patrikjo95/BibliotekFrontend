@@ -9,21 +9,21 @@
 <AnchorPane onMouseMoved="#showCustomerLoginPNR" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerLoginFirstPage">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c39351" height="571.0" layoutX="-7.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="619.0" />
-      <Button fx:id="customerLogoutButton" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#cCustomerLogoutButton" text="Logout">
+      <Button fx:id="customerLogoutButton" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#cCustomerLogoutButton" text="Logga ut">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <Button fx:id="borrowBookButtonForCustomer" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="120.0" mnemonicParsing="false" onAction="#borrowBookButtonForCustomer" prefHeight="68.0" prefWidth="200.0" text="Borrow Book">
+      <Button fx:id="borrowBookButtonForCustomer" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="120.0" mnemonicParsing="false" onAction="#borrowBookButtonForCustomer" prefHeight="68.0" prefWidth="200.0" text="Låna bok">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="200.0" layoutY="241.0" mnemonicParsing="false" onAction="#cGoToRoomFirstPage" prefHeight="68.0" prefWidth="200.0" text="Schedule a room">
+      <Button alignment="CENTER" layoutX="200.0" layoutY="241.0" mnemonicParsing="false" onAction="#cGoToRoomFirstPage" prefHeight="68.0" prefWidth="200.0" text="Boka ett rum">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="200.0" layoutY="362.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="200.0" text="My Page">
+      <Button alignment="CENTER" layoutX="200.0" layoutY="362.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="200.0" text="Min Sida">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>

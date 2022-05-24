@@ -25,17 +25,17 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="RoomOne" layoutX="101.0" layoutY="170.0" mnemonicParsing="false" onAction="#cGoToRoomOnePage" text="See vacant rooms">
+      <Button fx:id="ToRoomOne" layoutX="101.0" layoutY="170.0" mnemonicParsing="false" onAction="#cGoToRoomOnePage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="581.0" layoutY="509.0" mnemonicParsing="false" text="See vacant rooms">
+      <Button fx:id="ToRoomFive" layoutX="581.0" layoutY="509.0" mnemonicParsing="false" onAction="#cGoToRoomFivePage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="581.0" layoutY="170.0" mnemonicParsing="false" text="See vacant rooms">
+      <Button fx:id="ToRoomThree" layoutX="581.0" layoutY="170.0" mnemonicParsing="false" onAction="#cGoToRoomThreePage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
@@ -50,17 +50,17 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="84.0" layoutY="347.0" mnemonicParsing="false" text="See vacant rooms">
+      <Button fx:id="ToRoomTwo" layoutX="84.0" layoutY="347.0" mnemonicParsing="false" onAction="#cGoToRoomTwoPage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <Button layoutX="581.0" layoutY="340.0" mnemonicParsing="false" text="See vacant rooms">
+      <Button fx:id="ToRoomFour" layoutX="581.0" layoutY="340.0" mnemonicParsing="false" onAction="#cGoToRoomFourPage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="RoomOnePage" layoutX="9.0" layoutY="509.0" mnemonicParsing="false" onAction="#cGoBackToCustomerPage" text="Back">
+      <Button fx:id="RoomOnePage" layoutX="9.0" layoutY="509.0" mnemonicParsing="false" onAction="#cGoBackToCustomerPage" text="Tillbaks">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
