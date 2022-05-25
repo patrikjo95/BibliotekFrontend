@@ -18,24 +18,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerCustomerRoomOnePage implements Initializable  {
-
-
-
-
-
-
-
-    //@FXML
-    //private Button BookRoomButton;
+public class ControllerCustomerRoomOnePage implements Initializable {
 
     @FXML
-    private TableView<String> calenderTableView;
-
+    private TableView<String> tableCalender;
+    @FXML
+    private TableColumn<String,String> col_ID_Room;
     @FXML
     private TableColumn<String,String> col_Date;
     @FXML
-    private TableColumn<String,String > col_0910;
+    private TableColumn<String,String> col_0910;
     @FXML
     private TableColumn<String,String> col_1011;
     @FXML
@@ -52,6 +44,8 @@ public class ControllerCustomerRoomOnePage implements Initializable  {
     private TableColumn<String,String> col_1617;
     @FXML
     private TableColumn<String,String> col_1718;
+    @FXML
+    private Button buttonLoad;
 
 
 
@@ -64,28 +58,13 @@ public class ControllerCustomerRoomOnePage implements Initializable  {
 
 
 
-
     }
-
-
-
     @FXML
-    private void cGoBackToCustomerScheduleRoom(ActionEvent event) throws IOException {
+    private void cBackFromRoomOneToCustomerScheduleRoom(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("customerScheduleRoom.fxml");
-    }
-
-    @FXML
-    public void cBookRoomButton(ActionEvent event) {
-
 
     }
-    @FXML
-    private void cTableView(MouseEvent event) {
-
-    }
-
-
 }
 
 

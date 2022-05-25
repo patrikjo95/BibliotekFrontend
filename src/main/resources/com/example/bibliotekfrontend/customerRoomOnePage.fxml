@@ -11,36 +11,41 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomOnePage">
    <children>
-      <Text layoutX="205.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 1" textAlignment="CENTER" underline="true">
+      <Text layoutX="239.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 1" underline="true">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <ImageView fitHeight="210.0" fitWidth="250.0" layoutX="180.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="170.0" fitWidth="220.0" layoutX="193.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Rum1.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="TocScheduleRoom" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cGoBackToCustomerScheduleRoom" text="Tillbaka">
-      <Button fx:id="TocScheduleRoomButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cGoBackToCustomerScheduleRoom" text="Back">
+      <Button fx:id="BackFromPage1" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomOneToCustomerScheduleRoom" text="Tillbaks">
          <font>
             <Font name="System Italic" size="12.0" />
-         </font>
-      </Button>
-      <TableView fx:id="calenderTableView" layoutY="256.0" prefHeight="226.0" prefWidth="610.0">
-         <columns>
-            <TableColumn fx:id="col_Date" prefWidth="75.0" text="Date" />
-            <TableColumn fx:id="col_0910" prefWidth="75.0" text="09:00-10:00" />
-            <TableColumn fx:id="col_1011" prefWidth="75.0" text="10:00-11:00" />
-            <TableColumn fx:id="col_1112" prefWidth="75.0" text="11:00-12:00" />
-            <TableColumn fx:id="col_1213" prefWidth="75.0" text="12:00-13:00" />
-            <TableColumn fx:id="col_1314" prefWidth="75.0" text="13:00-14:00" />
-            <TableColumn fx:id="col_1415" prefWidth="75.0" text="14:00-15:00" />
-            <TableColumn fx:id="col_1516" prefWidth="75.0" text="15:00-16:00" />
-            <TableColumn fx:id="col_1617" prefWidth="75.0" text="16:00-17:00" />
-            <TableColumn fx:id="col_1718" prefWidth="75.0" text="17:00-18:00" />
-         </columns></TableView>
-      <Button fx:id="BookRoomButton" layoutX="520.0" layoutY="511.0" mnemonicParsing="false" onAction="#cLoadDataFromDatabase" text="Book Room">
+         </font></Button>
+      <TableView fx:id="tableCalender" layoutX="-8.0" layoutY="245.0" prefHeight="238.0" prefWidth="607.0">
+        <columns>
+          <TableColumn fx:id="col_ID_Room" prefWidth="75.0" text="ID_Room" />
+          <TableColumn fx:id="col_Date" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="col_0910" prefWidth="60.0" text="09:00-10:00" />
+            <TableColumn fx:id="col_1011" prefWidth="60.0" text="10:00-11:00" />
+            <TableColumn fx:id="col_1112" prefWidth="60.0" text="11:00-12:00" />
+            <TableColumn fx:id="col_1213" prefWidth="60.0" text="12:00-13:00" />
+            <TableColumn fx:id="col_1314" prefWidth="60.0" text="13:00-14:00" />
+            <TableColumn fx:id="col_1415" prefWidth="60.0" text="14:00-15:00" />
+            <TableColumn fx:id="col_1516" prefWidth="60.0" text="15:00-16:00" />
+            <TableColumn fx:id="col_1617" prefWidth="60.0" text="16:00-17:00" />
+            <TableColumn fx:id="col_1718" prefWidth="60.0" text="17:00-18:00">
+
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Column X" />
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Button fx:id="buttonLoad" layoutX="497.0" layoutY="498.0" mnemonicParsing="false" onAction="#loadDataFromDatabase" text="Se lediga tider">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>

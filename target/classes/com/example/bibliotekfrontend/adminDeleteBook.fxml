@@ -24,7 +24,5 @@
             <Label layoutX="6.0" layoutY="-4.0" prefHeight="36.0" prefWidth="200.0" text="Skriv id: om du vill söka ID" />
          </children>
       </AnchorPane>
-      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
    </children>
 </AnchorPane>
