@@ -17,7 +17,7 @@
       <ListView fx:id="searchBookList" layoutX="241.0" layoutY="25.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
       <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="RADERA BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
       <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Text fx:id="helpText" layoutX="201.0" layoutY="38.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Help" />
+      <Text fx:id="helpText" layoutX="201.0" layoutY="38.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
       <AnchorPane fx:id="helpPopUp" layoutX="234.0" layoutY="9.0" prefHeight="67.0" prefWidth="257.0" style="-fx-background-color: lightgray;" visible="false">
          <children>
             <Label layoutX="6.0" layoutY="27.0" prefHeight="25.0" prefWidth="251.0" text="Skriv ISBN: om du vill söka ISBN" />

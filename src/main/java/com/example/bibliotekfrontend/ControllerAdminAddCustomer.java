@@ -83,6 +83,9 @@ public class ControllerAdminAddCustomer {
                 registerConfirmationLabel.setText("En ny medlem har skapats!");
             }
         } else {
+            samePinErrorLabel.setVisible(true);
+            errorRegisterConfirmationLabel.setVisible(false);
+            registerConfirmationLabel.setVisible(false);
             samePinErrorLabel.setText("PIN måste matcha");
             samePinErrorLabel.setTextFill(Color.RED);
         }
