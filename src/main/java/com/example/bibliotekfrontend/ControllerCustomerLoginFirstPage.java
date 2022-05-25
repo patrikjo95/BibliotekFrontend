@@ -43,6 +43,7 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
         customerLoggedInAsDetails.setText("You are logged in as: " + customer_pnr_from_file);
         customerLoggedInAsDetails.setVisible(true);
     }
+
     @FXML
     private Label customerLoggedInAsDetails;
 
@@ -76,7 +77,6 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
         Application a = new Application();
         a.changeScene("borrowBookPageForCustomer.fxml");
     }
-
 
 
 }

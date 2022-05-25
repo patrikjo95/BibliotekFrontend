@@ -68,7 +68,7 @@ public class ControllerFirstPage {
 
             for(int i = 0; i < array.length(); i++){
                 JSONObject object = array.getJSONObject(i);
-                searchBookList.getItems().add("Title: " + object.getString("book_title") +  " | " +  "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Publishing year: " + object.getString("book_year"));
+                searchBookList.getItems().add("Titel: " + object.getString("book_title") +  " | " +  "Författare: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "År: " + object.getString("book_year"));
 
             }
 

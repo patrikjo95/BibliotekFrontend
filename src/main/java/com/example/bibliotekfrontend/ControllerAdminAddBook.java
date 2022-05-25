@@ -56,19 +56,19 @@ public class ControllerAdminAddBook {
         if (response.contains("error duplicated")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("That book already exists");
+            cErrorLabel.setText("Den boken finns redan.");
         } else if (response.contains("Not valid year")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("That year is not valid");
+            cErrorLabel.setText("Det året är ogiltigt.");
         } else if (response.contains("Its not year")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Please enter a year");
+            cErrorLabel.setText("Var god skriv ett giltigt år.");
         } else if (response.contains("error qty int")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Incorrect quantity");
+            cErrorLabel.setText("Inkorrekt kvantitet");
         } else if (response.contains("0")) {
             cConfirmationLabel.setVisible(true);
             cErrorLabel.setVisible(false);

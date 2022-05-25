@@ -13,13 +13,13 @@
          <font>
             <Font size="36.0" />
          </font></Label>
-        <TextField layoutX="226.0" layoutY="208.0" promptText="Username" />
-        <PasswordField layoutX="226.0" layoutY="250.0" promptText="Password" />
+        <TextField layoutX="226.0" layoutY="208.0" promptText="Användarnamn" />
+        <PasswordField layoutX="226.0" layoutY="250.0" promptText="Lösenord" />
         <Button fx:id="loginAdminButton" layoutX="278.0" layoutY="296.0" mnemonicParsing="false" onAction="#cGoToLoginAdmin" text="Login">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-        <Button fx:id="backToFrontPageButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Back to front page">
+        <Button fx:id="backToFrontPageButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Tillbaks till förstasidan">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>

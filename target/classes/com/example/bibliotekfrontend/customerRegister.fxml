@@ -9,18 +9,18 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="122.0" text="Register Customer">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="122.0" text="Registrera kund">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="YMDXTextField" layoutX="226.0" layoutY="203.0" promptText="YYYYMMDDXXXX" />
+      <TextField fx:id="YMDXTextField" layoutX="226.0" layoutY="203.0" promptText="ÅÅÅÅMMDDXXXX" />
       <PasswordField fx:id="pin1PasswordField" layoutX="226.0" layoutY="250.0" promptText="PIN" />
-      <PasswordField fx:id="pin2PasswordField" layoutX="226.0" layoutY="282.0" promptText="Confirm PIN" />
-      <Button fx:id="RegisterWithBankID" layoutX="235.0" layoutY="325.0" mnemonicParsing="false" onAction="#cRegisterWithBankID" text="Register with Bank-ID" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToLoginButton" text="Back" />
-      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="YYYYMMDDXXXX" />
-      <Label layoutX="120.0" layoutY="250.0" prefHeight="25.0" prefWidth="101.0" text="Four Number PIN" />
+      <PasswordField fx:id="pin2PasswordField" layoutX="226.0" layoutY="282.0" promptText="Bekräfta PIN" />
+      <Button fx:id="RegisterWithBankID" layoutX="235.0" layoutY="325.0" mnemonicParsing="false" onAction="#cRegisterWithBankID" text="Registrera med Bank-ID" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToLoginButton" text="Tillbaks" />
+      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="ÅÅÅÅMMDDXXXX" />
+      <Label layoutX="120.0" layoutY="250.0" prefHeight="25.0" prefWidth="101.0" text="Fyrsiffrigt PIN" />
       <Label fx:id="pinErrorLabel" layoutX="389.0" layoutY="254.0" prefHeight="17.0" prefWidth="190.0" textFill="#e41e1e" />
       <Label fx:id="registerLabel" alignment="CENTER" layoutX="155.0" layoutY="175.0" prefHeight="17.0" prefWidth="293.0" />
    </children>
