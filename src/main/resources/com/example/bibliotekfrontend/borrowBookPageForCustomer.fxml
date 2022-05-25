@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerBorrowBookPageForCustomer">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerBorrowBookPageForCustomer">
    <children>
       <Label layoutX="266.0" layoutY="14.0" text="Låna bok" />
-      <TextField layoutX="161.0" layoutY="60.0" />
-      <Button layoutX="335.0" layoutY="60.0" mnemonicParsing="false" text="Sök bok" />
-      <ListView layoutX="19.0" layoutY="90.0" prefHeight="398.0" prefWidth="564.0" />
-      <Button layoutX="531.0" layoutY="500.0" mnemonicParsing="false" text="Låna" />
+      <TextField fx:id="searchBorrowBookTextField" layoutX="161.0" layoutY="60.0" onAction="#cSearchForBorrowBook" />
+      <Button fx:id="searchBorrowBookButton" layoutX="335.0" layoutY="60.0" mnemonicParsing="false" onAction="#cSearchForBorrowBook" text="Sök Bok" />
+      <ListView fx:id="borrowBookListView" layoutX="19.0" layoutY="90.0" onMouseClicked="#cListViewForBorrow" prefHeight="398.0" prefWidth="564.0" />
+      <Button layoutX="531.0" layoutY="500.0" mnemonicParsing="false" onAction="#cBorrowBook" text="Låna" />
       <Button fx:id="backToCustomerFirstPageButton" layoutX="19.0" layoutY="500.0" mnemonicParsing="false" onAction="#backToCustomerFirstPage" text="Tillbaka" />
+      <Label fx:id="selectedBookForBorrow" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="504.0" prefHeight="17.0" prefWidth="428.0" />
    </children>
 </AnchorPane>
