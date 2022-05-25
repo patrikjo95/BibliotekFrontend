@@ -12,7 +12,7 @@
    <children>
       <TabPane layoutY="36.0" prefHeight="515.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Books">
+          <Tab text="Böcker">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -35,7 +35,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Customers">
+          <Tab text="Kunder">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -47,6 +47,6 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="cAdminLogoutButton" layoutX="538.0" layoutY="2.0" mnemonicParsing="false" onAction="#cAdminLogoutButton" text="Logout" />
+      <Button fx:id="cAdminLogoutButton" layoutX="538.0" layoutY="2.0" mnemonicParsing="false" onAction="#cAdminLogoutButton" text="Logga ut" />
    </children>
 </AnchorPane>
