@@ -10,11 +10,13 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomFourPage">
    <children>
+      <Button fx:id="RoomFour" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomFourToCustomerScheduleRoom" text="Tillbaka">
       <Button fx:id="RoomFour" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomFourToCustomerScheduleRoom" text="Back">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
+      <Text layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 4" underline="true">
       <Text layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROOM FOUR" underline="true">
          <font>
             <Font size="36.0" />

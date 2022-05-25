@@ -10,6 +10,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomFivePage">
    <children>
+      <Text layoutX="207.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 5" underline="true">
       <Text layoutX="207.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROOM FIVE" underline="true">
          <font>
             <Font size="36.0" />
@@ -20,6 +21,7 @@
             <Image url="@images/Rum5.jpg" />
          </image>
       </ImageView>
+      <Button fx:id="RoomFive" layoutX="14.0" layoutY="510.0" mnemonicParsing="false" onAction="#cBackFromRoomFiveToCustomerScheduleRoom" text="Tillbaks">
       <Button fx:id="RoomFive" layoutX="14.0" layoutY="510.0" mnemonicParsing="false" onAction="#cBackFromRoomFiveToCustomerScheduleRoom" text="Back">
          <font>
             <Font name="System Italic" size="12.0" />

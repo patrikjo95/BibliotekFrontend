@@ -73,29 +73,20 @@ public class ControllerCustomerLogin {
             //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
-            errorLabelLoginCustomer.setText("This personnummer has not been registered yet.");
+            errorLabelLoginCustomer.setText("Detta personnummer kunde inte hittas i vårat register.");
         } else if (response.contains("wrong pin")) {
             //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
-            errorLabelLoginCustomer.setText("Wrong pin!");
-        } else {
+            errorLabelLoginCustomer.setText("Fel PIN!");
+        } else if (response.contains(customer_pnr)) {
             try {
-                //File customer_pnr_txt_file = new File("customer_pnr_txt_file.txt");
-                /*
-                if (customer_pnr_txt_file.createNewFile()) {
-                    System.out.println("File created: " + customer_pnr_txt_file.getName());
-                } else {
-                    System.out.println("File already exists.");
-                }
-                 */
                 FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
                 myWriter.write(customer_pnr);
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
                 Application a = new Application();
                 a.changeScene("customerLoginFirstPage.fxml");
-                // controllerCustomerLoginFirstPage.showCustomerLoginPNR();
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();

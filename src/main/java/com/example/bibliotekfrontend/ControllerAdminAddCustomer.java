@@ -45,45 +45,48 @@ public class ControllerAdminAddCustomer {
             response = connectionManager.sendGetRequest("/add_customer?pnr=" + YMDX + "&pin=" + pin1);
             System.out.println(response);
             samePinErrorLabel.setVisible(false);
-            if (response.contains("duplicate")){
+            if (response.contains("duplicate")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("User already exists");
+                errorRegisterConfirmationLabel.setText("Denna användare finns redan.");
             } else if (response.contains("pnr is not an int")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input correct numbers for YYYYMMDDXXXX");
+                errorRegisterConfirmationLabel.setText("Var god skriv in siffror i följande format: ÅÅÅÅMMDDXXXX");
             } else if (response.contains("length pnr")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input correct length for YYYYMMDDXXXX");
+                errorRegisterConfirmationLabel.setText("Var god skriv in siffror med korrekt längd: ÅÅÅÅMMDDXXXX");
             } else if (response.contains("year")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input correct numbers for YYYY");
+                errorRegisterConfirmationLabel.setText("Var god skriv in korrekta siffror för ÅÅÅÅ");
             } else if (response.contains("month")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input correct numbers for MM");
+                errorRegisterConfirmationLabel.setText("Var god skriv in korrekta siffror för MM");
             } else if (response.contains("day")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input correct numbers for DD");
+                errorRegisterConfirmationLabel.setText("Var god skriv in korrekta siffror för DD");
             } else if (response.contains("length pin")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input four numbers for PIN");
+                errorRegisterConfirmationLabel.setText("Var god skriv in fyra siffror för PIN");
             } else if (response.contains("pin is not int")) {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
-                errorRegisterConfirmationLabel.setText("Please input only numbers for PIN");
+                errorRegisterConfirmationLabel.setText("Var god skriv in enbart siffror för PIN");
             } else {
                 errorRegisterConfirmationLabel.setVisible(false);
                 registerConfirmationLabel.setVisible(true);
-                registerConfirmationLabel.setText("A member has been added!");
+                registerConfirmationLabel.setText("En ny medlem har skapats!");
             }
         } else {
-            samePinErrorLabel.setText("PIN must match");
+            samePinErrorLabel.setVisible(true);
+            errorRegisterConfirmationLabel.setVisible(false);
+            registerConfirmationLabel.setVisible(false);
+            samePinErrorLabel.setText("PIN måste matcha");
             samePinErrorLabel.setTextFill(Color.RED);
         }
 

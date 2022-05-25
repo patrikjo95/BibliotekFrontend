@@ -5,16 +5,24 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminDeleteBook">
    <children>
-      <TextField fx:id="searchBooksTextField" layoutX="45.0" layoutY="51.0" promptText="Search" />
+      <TextField fx:id="searchBooksTextField" layoutX="45.0" layoutY="51.0" promptText="Sök" />
       <TextField fx:id="bookIDTextField" layoutX="45.0" layoutY="175.0" promptText="ID" />
-      <Button fx:id="deleteBookButton" layoutX="79.0" layoutY="212.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Delete Book" />
-      <Button fx:id="cBackButton" layoutX="544.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Back" />
-      <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Search" />
+      <Button fx:id="deleteBookButton" layoutX="79.0" layoutY="212.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Radera bok" />
+      <Button fx:id="cBackButton" layoutX="544.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Tillbaks" />
+      <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Sök" />
       <ListView fx:id="searchBookList" layoutX="241.0" layoutY="25.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
-      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="DELETE BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SEARCH BOOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="146.0" text="RADERA BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="61.0" layoutY="25.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Text fx:id="helpText" layoutX="201.0" layoutY="38.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
+      <AnchorPane fx:id="helpPopUp" layoutX="234.0" layoutY="9.0" prefHeight="67.0" prefWidth="257.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Label layoutX="6.0" layoutY="27.0" prefHeight="25.0" prefWidth="251.0" text="Skriv ISBN: om du vill söka ISBN" />
+            <Label layoutX="6.0" layoutY="-4.0" prefHeight="36.0" prefWidth="200.0" text="Skriv id: om du vill söka ID" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
