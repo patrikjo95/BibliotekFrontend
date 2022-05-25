@@ -21,7 +21,7 @@ public class Application extends javafx.application.Application {
         newStage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("firstPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Best Library Evah");
+        stage.setTitle("Bibliotek Diskus");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

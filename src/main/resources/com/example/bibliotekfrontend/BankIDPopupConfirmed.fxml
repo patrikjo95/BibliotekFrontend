@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="160.0" prefWidth="246.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
    <children>
-      <Label layoutX="115.0" layoutY="58.0" text="Confirmed!" textFill="#2cda23">
+      <Label layoutX="115.0" layoutY="58.0" text="Bekräftat!" textFill="#2cda23">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>

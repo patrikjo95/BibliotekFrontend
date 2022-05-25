@@ -9,18 +9,18 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddCustomer">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="122.0" text="Register Customer">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="154.0" layoutY="122.0" text="Registrera kund">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <TextField fx:id="YMDXField" layoutX="226.0" layoutY="203.0" promptText="YYYYMMDDXXXX" />
+      <TextField fx:id="YMDXField" layoutX="226.0" layoutY="203.0" promptText="ÅÅÅÅMMDDXXXX" />
       <PasswordField fx:id="pinField1" layoutX="226.0" layoutY="250.0" promptText="PIN" />
-      <PasswordField fx:id="pinField2" layoutX="226.0" layoutY="282.0" promptText="Confirm PIN" />
-      <Button alignment="CENTER" layoutX="270.0" layoutY="336.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Register" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToAdminFirstPage" text="Back" />
-      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="YYYYMMDDXXXX" />
-      <Label layoutX="112.0" layoutY="250.0" prefHeight="25.0" prefWidth="97.0" text="Four Number PIN" />
+      <PasswordField fx:id="pinField2" layoutX="226.0" layoutY="282.0" promptText="Bekräfta PIN" />
+      <Button alignment="CENTER" layoutX="270.0" layoutY="336.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Registrera" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToAdminFirstPage" text="Tillbaka" />
+      <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="ÅÅÅÅMMDDXXXX" />
+      <Label layoutX="112.0" layoutY="250.0" prefHeight="25.0" prefWidth="97.0" text="Fyrsiffrigt PIN" />
       <Label fx:id="samePinErrorLabel" layoutX="382.0" layoutY="254.0" prefHeight="17.0" prefWidth="192.0" />
       <Label fx:id="registerConfirmationLabel" alignment="CENTER" layoutX="193.0" layoutY="175.0" prefHeight="17.0" prefWidth="214.0" textFill="#26d329" />
       <Label fx:id="errorRegisterConfirmationLabel" alignment="CENTER" layoutX="132.0" layoutY="313.0" prefHeight="17.0" prefWidth="337.0" textFill="#d74e4e" />
