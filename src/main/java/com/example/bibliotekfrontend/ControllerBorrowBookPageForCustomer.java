@@ -45,6 +45,7 @@ public class ControllerBorrowBookPageForCustomer {
         Platform.runLater(()->{
             String input = u.encodeToURL(searchBorrowBookTextField.getText());
             borrowBookListView.getItems().clear();
+            borrowBookListView.requestFocus();
             response = connectionManager.sendGetRequest("/search_for_a_book_borrow?check_book=" + input);
             response = u.trimResponse(response);
 
