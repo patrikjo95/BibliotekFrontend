@@ -87,8 +87,10 @@ public class ControllerCustomerRegister {
                 a.openPopup("BankIDPopup.fxml");
             }
         } else {
+            pinErrorLabel.setVisible(true);
             pinErrorLabel.setText("PIN måste matcha");
             pinErrorLabel.setTextFill(Color.RED);
+            registerLabel.setVisible(false);
         }
 
     }
