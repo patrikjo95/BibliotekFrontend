@@ -100,7 +100,6 @@ public class ControllerAdminDeleteBook {
     public void cDeleteBookButton(ActionEvent event) {
         String bookID = u.encodeToURL(bookIDTextField.getText());
         response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + bookID);
-        //System.out.println("response:" + response);
 
         if(response.contains("this is not int")){
             deleteBookErrorLabel.setVisible(true);
