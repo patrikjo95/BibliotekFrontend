@@ -73,13 +73,13 @@ public class ControllerCustomerLogin {
             //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
-            errorLabelLoginCustomer.setText("This personnummer has not been registered yet.");
+            errorLabelLoginCustomer.setText("Detta personnummer kunde inte hittas i vårat register.");
         } else if (response.contains("wrong pin")) {
             //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
-            errorLabelLoginCustomer.setText("Wrong pin!");
-        } else if (response.contains(customer_pnr)){
+            errorLabelLoginCustomer.setText("Fel PIN!");
+        } else if (response.contains(customer_pnr)) {
             try {
                 FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
                 myWriter.write(customer_pnr);

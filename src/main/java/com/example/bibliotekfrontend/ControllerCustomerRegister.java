@@ -51,44 +51,46 @@ public class ControllerCustomerRegister {
             if (response.contains("duplicate")){
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("User already exists");
+                registerLabel.setText("Denna användare finns redan");
             } else if (response.contains("pnr is not an int")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input correct numbers for YYYYMMDDXXXX");
+                registerLabel.setText("Var god skriv in siffror i följande format: ÅÅÅÅMMDDXXXX");
             } else if (response.contains("length pnr")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input correct length for YYYYMMDDXXXX");
+                registerLabel.setText("Var god skriv in siffror med korrekt längd: ÅÅÅÅMMDDXXXX");
             } else if (response.contains("year")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input correct numbers for YYYY");
+                registerLabel.setText("Var god skriv in korrekta siffror för ÅÅÅÅ");
             } else if (response.contains("month")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input correct numbers for MM");
+                registerLabel.setText("Var god skriv in korrekta siffror för MM");
             } else if (response.contains("day")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input correct numbers for DD");
+                registerLabel.setText("Var god skriv in korrekta siffror för DD");
             } else if (response.contains("length pin")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input four numbers for PIN");
+                registerLabel.setText("Var god skriv in fyra siffror för PIN\"");
             } else if (response.contains("pin is not int")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Please input only numbers for PIN");
+                registerLabel.setText("Var god skriv in enbart siffror för PIN");
             } else {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.GREEN);
-                registerLabel.setText("You have successfully registered!");
+                registerLabel.setText("En ny medlem har skapats!");
                 a.openPopup("BankIDPopup.fxml");
             }
         } else {
-            pinErrorLabel.setText("PIN must match");
+            pinErrorLabel.setVisible(true);
+            pinErrorLabel.setText("PIN måste matcha");
             pinErrorLabel.setTextFill(Color.RED);
+            registerLabel.setVisible(false);
         }
 
     }
