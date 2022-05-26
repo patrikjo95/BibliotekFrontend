@@ -49,6 +49,13 @@ public class Utility {
         return str;
     }
 
+    public String getBookIDFromSelectedString(String str){
+        str = str.substring(str.indexOf("Bok ID: ") + 7);
+        str = str.substring(0, str.indexOf(" |"));
+
+        return str;
+    }
+
 
 
 

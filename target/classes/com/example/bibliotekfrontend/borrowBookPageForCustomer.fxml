@@ -17,7 +17,7 @@
          </font></Label>
       <Button fx:id="searchBorrowBookButton" layoutX="335.0" layoutY="60.0" mnemonicParsing="false" onAction="#cSearchForBorrowBook" text="Sök Bok" />
       <Button layoutX="552.0" layoutY="513.0" mnemonicParsing="false" onAction="#cBorrowBook" text="Låna" />
-      <Button fx:id="backToCustomerFirstPageButton" layoutX="19.0" layoutY="500.0" mnemonicParsing="false" onAction="#backToCustomerFirstPage" text="Tillbaka" />
+      <Button fx:id="backToCustomerFirstPageButton" layoutX="14.0" layoutY="513.0" mnemonicParsing="false" onAction="#backToCustomerFirstPage" text="Tillbaka" />
       <Label fx:id="selectedBookForBorrow" alignment="CENTER_RIGHT" layoutX="115.0" layoutY="517.0" prefHeight="17.0" prefWidth="428.0" />
       <Label fx:id="borrowErrorConfirmation" alignment="CENTER_RIGHT" layoutX="115.0" layoutY="492.0" prefHeight="17.0" prefWidth="475.0" />
    </children>
