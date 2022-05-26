@@ -5,20 +5,31 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
    <children>
-      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="50.0" promptText="Title" />
-      <Label fx:id="cErrorLabel" alignment="CENTER" layoutX="45.0" layoutY="25.0" prefWidth="128.0" text="FELMEDDELANDE" textAlignment="CENTER" textFill="#ff1414" visible="false" />
-      <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="110.0" promptText="Antal" />
-      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="170.0" promptText="Författare" />
-      <TextField fx:id="genreTextField" layoutX="45.0" layoutY="230.0" promptText="Genre" />
-      <TextField fx:id="yearTextField" layoutX="45.0" layoutY="290.0" promptText="År" />
-      <TextField fx:id="urlTextField" layoutX="45.0" layoutY="350.0" promptText="URL för bild" />
-      <ImageView fitHeight="338.0" fitWidth="273.0" layoutX="298.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="207.0" layoutY="350.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Visa bild" />
-      <Button fx:id="addBookButton" layoutX="85.0" layoutY="405.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Lägg till bok" />
-      <Label fx:id="cConfirmationLabel" layoutX="194.0" layoutY="409.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
-      <Button fx:id="cAddBookBackButton" layoutX="16.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Tillbaks" />
+      <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="168.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a87b41" height="370.0" layoutX="35.0" layoutY="120.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="270.0" />
+      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="160.0" promptText="Title" />
+      <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="210.0" promptText="Antal" />
+      <TextField fx:id="authorTextField" layoutX="45.0" layoutY="260.0" promptText="Författare" />
+      <TextField fx:id="genreTextField" layoutX="45.0" layoutY="310.0" promptText="Genre" />
+      <TextField fx:id="yearTextField" layoutX="45.0" layoutY="360.0" promptText="År" />
+      <TextField fx:id="urlTextField" layoutX="45.0" layoutY="410.0" promptText="URL för bild" />
+      <ImageView fitHeight="338.0" fitWidth="273.0" layoutX="317.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="207.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Visa bild" />
+      <Button fx:id="addBookButton" layoutX="85.0" layoutY="450.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Lägg till bok" />
+      <Label fx:id="cConfirmationLabel" layoutX="173.0" layoutY="454.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
+      <Label fx:id="cErrorLabel" layoutX="40.0" layoutY="130.0" prefHeight="17.0" prefWidth="260.0" textAlignment="CENTER" textFill="#ff1414" />
+      <Button fx:id="cAddBookBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Tillbaka" />
+      <Label layoutX="191.0" layoutY="42.0" text="Lägg till böcker" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
