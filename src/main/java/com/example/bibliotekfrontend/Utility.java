@@ -35,7 +35,12 @@ public class Utility {
         return splitString[1];
 
     }
+    public String getTitleFromString(String str){
+        str = str.substring(str.indexOf(" ") + 1);
+        str = str.substring(0, str.indexOf(" |"));
 
+        return str;
+    }
 
 
 }
