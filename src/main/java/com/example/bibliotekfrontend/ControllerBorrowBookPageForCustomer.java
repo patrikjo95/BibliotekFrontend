@@ -24,6 +24,8 @@ public class ControllerBorrowBookPageForCustomer {
     @FXML
     private Label selectedBookForBorrow;
 
+    private String selectedBookString;
+
     @FXML
     private Label borrowErrorConfirmation;
 
@@ -35,8 +37,6 @@ public class ControllerBorrowBookPageForCustomer {
     private ListView<String> borrowBookListView;
     @FXML
     private Button backToCustomerFirstPageButton;
-
-    private String selectedBookString;
 
     ConnectionManager connectionManager = new ConnectionManager();
     Utility u = new Utility();
