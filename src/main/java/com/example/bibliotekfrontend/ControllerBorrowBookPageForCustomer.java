@@ -5,6 +5,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -17,9 +18,11 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class ControllerBorrowBookPageForCustomer {
+public class ControllerBorrowBookPageForCustomer implements Initializable {
 
     @FXML
     private Label selectedBookForBorrow;
@@ -51,10 +54,9 @@ public class ControllerBorrowBookPageForCustomer {
     }
 
     @FXML
-    private void cSearchForBorrowBook(ActionEvent event) {
-        Platform.runLater(()->{
+    private void cSearchForBorrowBook(ActionEvent event){
+
             String input = u.encodeToURL(searchBorrowBookTextField.getText());
-            borrowBookListView.getItems().clear();
             response = connectionManager.sendGetRequest("/search_for_a_book_borrow?check_book=" + input);
             response = u.trimResponse(response);
 
@@ -67,7 +69,7 @@ public class ControllerBorrowBookPageForCustomer {
 
             }
 
-        });
+
     }
     @FXML
     private void cListViewForBorrow(MouseEvent event){
@@ -134,5 +136,26 @@ public class ControllerBorrowBookPageForCustomer {
             borrowErrorConfirmation.setTextFill(Color.GREEN);
         }
 
+    }
+
+
+    /**
+     *
+     * Fixar bug för listview där den inte reagerade på första gången man klickade på den
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        borrowBookListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+
+                //String selectedBookString = borrowBookListView.getSelectionModel().getSelectedItem();
+                selectedBookString = borrowBookListView.getSelectionModel().getSelectedItem();
+                String selectedTitle = u.getTitleFromString(selectedBookString);
+                selectedBookForBorrow.setText(selectedTitle);
+
+
+            }
+        });
     }
 }
