@@ -3,6 +3,7 @@ package com.example.bibliotekfrontend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class ControllerCustomerLoginFirstPage implements Initializable {
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,6 +78,12 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
     private void borrowBookButtonForCustomer(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("borrowBookPageForCustomer.fxml");
+    }
+
+    @FXML
+    private void cButtonMinaSidor(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("customerMyPage.fxml");
     }
 
 
