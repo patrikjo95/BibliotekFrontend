@@ -13,7 +13,7 @@
    <children>
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="168.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a87b41" height="370.0" layoutX="35.0" layoutY="120.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="270.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="370.0" layoutX="35.0" layoutY="120.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="270.0" />
       <TextField fx:id="titleTextField" layoutX="45.0" layoutY="160.0" promptText="Title" />
       <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="210.0" promptText="Antal" />
       <TextField fx:id="authorTextField" layoutX="45.0" layoutY="260.0" promptText="Författare" />
