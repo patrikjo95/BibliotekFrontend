@@ -11,7 +11,7 @@
    <children>
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="171.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="530.0" layoutY="3.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="67.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a87b41" height="370.0" layoutX="160.0" layoutY="90.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="370.0" layoutX="160.0" layoutY="90.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="280.0" />
       <Button fx:id="customerLogoutButton" layoutX="532.0" layoutY="5.0" mnemonicParsing="false" onAction="#cCustomerLogoutButton" text="Logga ut">
          <font>
             <Font name="System Italic" size="12.0" />
