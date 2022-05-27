@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.CubicCurve?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminDeleteBook">
@@ -16,15 +17,28 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a87b41" height="340.0" layoutX="19.0" layoutY="24.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="210.0" />
       <TextField fx:id="searchBooksTextField" layoutX="38.0" layoutY="51.0" promptText="Sök" />
       <TextField fx:id="bookIDTextField" layoutX="38.0" layoutY="151.0" promptText="ID" />
-      <Button fx:id="deleteBookButton" layoutX="74.0" layoutY="190.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Radera bok" />
-      <Button fx:id="cBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Tillbaks" />
-      <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Sök" />
+      <Button fx:id="deleteBookButton" layoutX="74.0" layoutY="190.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Radera bok">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="cBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackButton" text="Tillbaka">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="searchButton" layoutX="94.0" layoutY="87.0" mnemonicParsing="false" onAction="#cSearchBooksButton" text="Sök">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
       <ListView fx:id="searchBookList" layoutX="242.0" layoutY="14.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
       <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="130.0" text="RADERA BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
       <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="30.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
       <Text fx:id="helpText" layoutX="194.0" layoutY="68.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
       <TextField layoutX="38.0" layoutY="254.0" promptText="ISBN" />
-      <Button layoutX="74.0" layoutY="292.0" mnemonicParsing="false" text="Radera titel" />
+      <Button layoutX="74.0" layoutY="292.0" mnemonicParsing="false" text="Radera titel">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Button>
       <AnchorPane fx:id="helpPopUp" layoutX="230.0" layoutY="30.0" prefHeight="60.0" prefWidth="353.0" style="-fx-background-color: lightgray;" visible="false">
          <children>
             <Label layoutX="6.0" layoutY="7.0" prefHeight="25.0" prefWidth="344.0" text="Skriv ID och nummer i formatet &quot;ID x&quot; för att söka på ID" />

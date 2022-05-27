@@ -22,8 +22,14 @@
       <TextField fx:id="YMDXField" layoutX="226.0" layoutY="203.0" promptText="ÅÅÅÅMMDDXXXX" />
       <PasswordField fx:id="pinField1" layoutX="226.0" layoutY="250.0" promptText="PIN" />
       <PasswordField fx:id="pinField2" layoutX="226.0" layoutY="282.0" promptText="Bekräfta PIN" />
-      <Button alignment="CENTER" layoutX="270.0" layoutY="336.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Registrera" />
-      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToAdminFirstPage" text="Tillbaka" />
+      <Button alignment="CENTER" layoutX="270.0" layoutY="336.0" mnemonicParsing="false" onAction="#cAddCustomerButton" text="Registrera">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToAdminFirstPage" text="Tillbaka">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
       <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="ÅÅÅÅMMDDXXXX" />
       <Label layoutX="112.0" layoutY="250.0" prefHeight="25.0" prefWidth="97.0" text="Fyrsiffrigt PIN" />
       <Label fx:id="samePinErrorLabel" layoutX="204.0" layoutY="231.0" prefHeight="17.0" prefWidth="192.0" />
