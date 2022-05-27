@@ -27,6 +27,8 @@ public class ControllerBorrowBookPageForCustomer implements Initializable {
     @FXML
     private Label selectedBookForBorrow;
 
+    private String selectedBookString;
+
     @FXML
     private Label borrowErrorConfirmation;
 
@@ -38,8 +40,6 @@ public class ControllerBorrowBookPageForCustomer implements Initializable {
     private ListView<String> borrowBookListView;
     @FXML
     private Button backToCustomerFirstPageButton;
-
-    private String selectedBookString;
 
     ConnectionManager connectionManager = new ConnectionManager();
     Utility u = new Utility();

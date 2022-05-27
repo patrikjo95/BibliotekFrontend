@@ -97,7 +97,7 @@ public class ControllerAdminDeleteBook {
     }
 
     @FXML
-    public void cDeleteBookButton(ActionEvent event) {
+    private void cDeleteBookButton(ActionEvent event) {
         String bookID = u.encodeToURL(bookIDTextField.getText());
         response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + bookID);
 
