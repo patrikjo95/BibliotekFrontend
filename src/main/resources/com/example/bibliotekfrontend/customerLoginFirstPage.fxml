@@ -3,27 +3,30 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseMoved="#showCustomerLoginPNR" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerLoginFirstPage">
+<AnchorPane onMouseMoved="#showCustomerLoginPNR" prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerLoginFirstPage">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c39351" height="571.0" layoutX="-7.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="619.0" />
-      <Button fx:id="customerLogoutButton" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" onAction="#cCustomerLogoutButton" text="Logga ut">
+      <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="171.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="530.0" layoutY="3.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="67.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="370.0" layoutX="160.0" layoutY="90.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="280.0" />
+      <Button fx:id="customerLogoutButton" layoutX="532.0" layoutY="5.0" mnemonicParsing="false" onAction="#cCustomerLogoutButton" text="Logga ut">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <Button fx:id="borrowBookButtonForCustomer" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="120.0" mnemonicParsing="false" onAction="#borrowBookButtonForCustomer" prefHeight="68.0" prefWidth="200.0" text="Låna bok">
+      <Button fx:id="borrowBookButtonForCustomer" alignment="CENTER" contentDisplay="CENTER" layoutX="200.0" layoutY="130.0" mnemonicParsing="false" onAction="#borrowBookButtonForCustomer" prefHeight="68.0" prefWidth="200.0" text="Låna bok">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="200.0" layoutY="241.0" mnemonicParsing="false" onAction="#cGoToRoomFirstPage" prefHeight="68.0" prefWidth="200.0" text="Boka ett rum">
+      <Button alignment="CENTER" layoutX="200.0" layoutY="240.0" mnemonicParsing="false" onAction="#cGoToRoomFirstPage" prefHeight="68.0" prefWidth="200.0" text="Boka ett rum">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>
       </Button>
-      <Button alignment="CENTER" layoutX="200.0" layoutY="362.0" mnemonicParsing="false" onAction="#cButtonMinaSidor" prefHeight="68.0" prefWidth="200.0" text="Mina sidor">
+      <Button alignment="CENTER" layoutX="200.0" layoutY="350.0" mnemonicParsing="false" onAction="#cButtonMinaSidor" prefHeight="68.0" prefWidth="200.0" text="Mina sidor">
          <font>
             <Font name="Arial Bold Italic" size="18.0" />
          </font>

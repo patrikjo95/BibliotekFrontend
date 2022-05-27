@@ -97,9 +97,9 @@ public class ControllerAdminDeleteBook {
     }
 
     @FXML
-    public void cDeleteBookButton(ActionEvent event) {
+    private void cDeleteBookButton(ActionEvent event) {
         String bookID = u.encodeToURL(bookIDTextField.getText());
-        response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + bookID);
+        response = connectionManager.sendGetRequest("/delete_book_ID/?ID_book=" + bookID);
 
         if (response.contains("this is not int")) {
             deleteBookErrorLabel.setVisible(true);
@@ -109,6 +109,10 @@ public class ControllerAdminDeleteBook {
             deleteBookErrorLabel.setVisible(true);
             deleteBookErrorLabel.setTextFill(Color.RED);
             deleteBookErrorLabel.setText("Detta ID finns ej.");
+        } else if (response.contains("Borrowed")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("Denna bok är tyvärr utlånad för tillfället.");
         } else if (response.contains("null")) {
             deleteBookErrorLabel.setVisible(true);
             deleteBookErrorLabel.setTextFill(Color.LIGHTGREEN);

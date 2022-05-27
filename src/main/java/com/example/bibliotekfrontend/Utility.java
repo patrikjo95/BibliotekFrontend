@@ -50,7 +50,7 @@ public class Utility {
     }
 
     public String getBookIDFromSelectedString(String str){
-        str = str.substring(str.indexOf("Bok ID: ") + 7);
+        str = str.substring(str.indexOf("Bok ID: ") + 8);
         str = str.substring(0, str.indexOf(" |"));
 
         return str;
