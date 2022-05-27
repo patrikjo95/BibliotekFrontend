@@ -1,5 +1,119 @@
 package com.example.bibliotekfrontend;
 
-public class ControllerCustomerMyPage {
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.Scanner;
+
+public class ControllerCustomerMyPage implements Initializable {
+
+    private String response;
+
+    JSONObject object = new JSONObject();
+
+    ConnectionManager connectionManager = new ConnectionManager();
+
+    Utility utility = new Utility();
+
+    private int ID_book_selected;
+
+    @FXML
+    private void cButtonBackToCustomerLoginFirstPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("customerLoginFirstPage.fxml");
+    }
+
+    @FXML
+    private Label customerLoggedInAsDetails;
+
+    @FXML
+    private ListView listViewBorrowedBooksSpecificCustomer;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Platform.runLater(() -> {
+            String customer_pnr_from_file = "";
+            //
+            try {
+                File file = new File("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
+                Scanner scanner = new Scanner(file);
+                customer_pnr_from_file = scanner.next();
+                //while (scanner.hasNext()) {
+                //    customer_pnr_from_file = scanner.next()
+                //}
+                //customer_pnr_from_file = scanner.hasNext();
+                //customer_pnr_from_file.appendText()
+
+                // YourTextArea.appendText(s.nextInt() + " ");
+            } catch (FileNotFoundException ex) {
+                System.err.println(ex);
+            }
+        /*
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+         */
+            //
+            customerLoggedInAsDetails.setText("You are logged in as: " + customer_pnr_from_file);
+            customerLoggedInAsDetails.setVisible(true);
+
+            // ska ta inloggat customer_pnr för att populate listview
+            // listViewBorrowedBooksSpecificCustomer.
+
+            populateListViewCustomerBorrowedBooks(customer_pnr_from_file);
+        });
+    }
+
+    private void populateListViewCustomerBorrowedBooks(String customer_pnr_from_file) {
+        response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_file);
+        System.out.println(response);
+        //listViewBorrowedBooksSpecificCustomer.;
+
+        response = utility.trimResponse(response);
+        System.out.println(response);
+        // nedan error
+        JSONArray array = new JSONArray(response);
+        System.out.println(array);
+
+        for (int i = 0; i < array.length(); i++) {
+            object = array.getJSONObject(i);
+            System.out.println(object);
+            listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
+            System.out.println(listViewBorrowedBooksSpecificCustomer);
+        }
+    }
+
+    private String selectedBookString;
+
+    private String selectedTitle;
+
+    @FXML
+    private void cSelectedBorrowedBookFromListViewToReturn(MouseEvent event){
+        listViewBorrowedBooksSpecificCustomer.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                selectedBookString = (String) listViewBorrowedBooksSpecificCustomer.getSelectionModel().getSelectedItem();
+                selectedTitle = utility.getBookIDFromSelectedString(selectedBookString);
+
+                // create return_book in Spring Boot
+                // nedan är ej färdigt
+                response = connectionManager.sendGetRequest("/return_book?book_id=" + selectedTitle);
+            }
+        });
+    }
 
 }
