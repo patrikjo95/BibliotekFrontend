@@ -21,11 +21,20 @@
       <TextField fx:id="yearTextField" layoutX="45.0" layoutY="360.0" promptText="År" />
       <TextField fx:id="urlTextField" layoutX="45.0" layoutY="410.0" promptText="URL för bild" />
       <ImageView fitHeight="338.0" fitWidth="273.0" layoutX="317.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="207.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Visa bild" />
-      <Button fx:id="addBookButton" layoutX="85.0" layoutY="450.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Lägg till bok" />
+      <Button layoutX="207.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Visa bild">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="addBookButton" layoutX="85.0" layoutY="450.0" mnemonicParsing="false" onAction="#cAddBookToDatabase" text="Lägg till bok">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
       <Label fx:id="cConfirmationLabel" layoutX="173.0" layoutY="454.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
       <Label fx:id="cErrorLabel" layoutX="40.0" layoutY="130.0" prefHeight="17.0" prefWidth="260.0" textAlignment="CENTER" textFill="#ff1414" />
-      <Button fx:id="cAddBookBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Tillbaka" />
+      <Button fx:id="cAddBookBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Tillbaka">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
       <Label layoutX="191.0" layoutY="42.0" text="Lägg till böcker" underline="true">
          <font>
             <Font name="System Bold Italic" size="36.0" />
