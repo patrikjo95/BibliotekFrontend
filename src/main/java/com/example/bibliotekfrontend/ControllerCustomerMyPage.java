@@ -21,6 +21,7 @@ import java.util.Scanner;
 
 public class ControllerCustomerMyPage implements Initializable {
 
+    //private String customer_pnr_from_file;
     private String response;
 
     JSONObject object = new JSONObject();
@@ -79,6 +80,7 @@ public class ControllerCustomerMyPage implements Initializable {
     }
 
     private void populateListViewCustomerBorrowedBooks(String customer_pnr_from_file) {
+        listViewBorrowedBooksSpecificCustomer.getItems().clear();
         response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_file);
         System.out.println(response);
         //listViewBorrowedBooksSpecificCustomer.;
@@ -99,21 +101,52 @@ public class ControllerCustomerMyPage implements Initializable {
 
     private String selectedBookString;
 
-    private String selectedTitle;
+    private String selectedBookID;
 
     @FXML
     private void cSelectedBorrowedBookFromListViewToReturn(MouseEvent event){
+        //System.out.println("T");
         listViewBorrowedBooksSpecificCustomer.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                //System.out.println("T2");
                 selectedBookString = (String) listViewBorrowedBooksSpecificCustomer.getSelectionModel().getSelectedItem();
-                selectedTitle = utility.getBookIDFromSelectedString(selectedBookString);
-
-                // create return_book in Spring Boot
-                // nedan är ej färdigt
-                response = connectionManager.sendGetRequest("/return_book?book_id=" + selectedTitle);
+                //System.out.println(selectedBookString);
+                selectedBookID = utility.getBookIDFromSelectedString(selectedBookString);
+                //System.out.println(selectedBookID);
             }
         });
     }
 
+    /*
+    @FXML
+    private Button ReturnBook;
+     */
+
+    @FXML
+    private void cReturnBook(ActionEvent event) {
+        System.out.println(selectedBookID);
+        System.out.println("T7");
+        response = connectionManager.sendGetRequest("/return_book/?book_id=" + selectedBookID);
+        System.out.println("T5");
+        System.out.println(response);
+        System.out.println("T6");
+        String customer_pnr_from_file = "";
+        //
+        try {
+            File file = new File("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
+            Scanner scanner = new Scanner(file);
+            customer_pnr_from_file = scanner.next();
+            //while (scanner.hasNext()) {
+            //    customer_pnr_from_file = scanner.next()
+            //}
+            //customer_pnr_from_file = scanner.hasNext();
+            //customer_pnr_from_file.appendText()
+
+            // YourTextArea.appendText(s.nextInt() + " ");
+        } catch (FileNotFoundException ex) {
+            System.err.println(ex);
+        }
+        populateListViewCustomerBorrowedBooks(customer_pnr_from_file);
+    }
 }
