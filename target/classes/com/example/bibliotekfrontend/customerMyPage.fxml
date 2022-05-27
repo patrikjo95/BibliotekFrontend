@@ -13,7 +13,7 @@
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="170.0" layoutY="-136.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="210.0" layoutX="69.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="210.0" layoutX="69.0" layoutY="342.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
-      <ListView fx:id="listViewBorrowedBooksSpecificCustomer" layoutX="74.0" layoutY="111.0" prefHeight="200.0" prefWidth="330.0" />
+      <ListView fx:id="listViewBorrowedBooksSpecificCustomer" layoutX="74.0" layoutY="111.0" onMouseClicked="#cSelectedBorrowedBookFromListViewToReturn" prefHeight="200.0" prefWidth="330.0" />
       <Label alignment="CENTER" layoutX="180.0" layoutY="24.0" text="Mina sidor" underline="true">
          <font>
             <Font name="Arial Bold Italic" size="48.0" />
@@ -24,7 +24,7 @@
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="415.0" layoutY="186.0" mnemonicParsing="false" text="Lämna tillbaka bok" />
+      <Button layoutX="415.0" layoutY="186.0" mnemonicParsing="false" onAction="#cReturnBook" text="Lämna tillbaka bok" />
       <ListView layoutX="74.0" layoutY="347.0" prefHeight="200.0" prefWidth="330.0" />
       <Label layoutX="74.0" layoutY="311.0" text="Bokade rum:">
          <font>
