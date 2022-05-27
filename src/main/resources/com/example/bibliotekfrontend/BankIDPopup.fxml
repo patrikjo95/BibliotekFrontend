@@ -8,16 +8,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="160.0" prefWidth="246.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
+<AnchorPane prefHeight="160.0" prefWidth="246.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
    <children>
-      <Label layoutX="28.0" layoutY="58.0" text="Var god öppna">
+      <Label layoutX="61.0" layoutY="21.0" text="Var god öppna">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Label>
       <Button fx:id="closeButton" layoutX="107.0" layoutY="99.0" mnemonicParsing="false" onAction="#cGoToBankIDConfirmed" text="OK" />
-      <Label layoutX="140.0" layoutY="58.0" text="Bank-ID">
+      <Label layoutX="88.0" layoutY="58.0" text="Bank-ID">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
