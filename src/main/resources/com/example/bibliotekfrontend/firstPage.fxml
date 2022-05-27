@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerFirstPage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerFirstPage">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c39351" height="563.0" layoutX="-7.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="614.0" />
+      <ImageView fitHeight="203.0" fitWidth="394.0" layoutX="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Logo_bibliotek.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a87b41" height="80.0" layoutX="470.0" layoutY="19.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="110.0" />
       <TextField fx:id="searchBooksTextField" layoutX="201.0" layoutY="144.0" promptText="Titel, Författare etc.">
          <font>
             <Font size="16.0" />
@@ -28,10 +34,10 @@
             <Font name="System Italic" size="12.0" />
          </font></Button>
       <ListView fx:id="searchBookList" layoutY="195.0" prefHeight="306.0" prefWidth="600.0" />
-      <Label alignment="CENTER" layoutX="180.0" layoutY="50.0" prefHeight="73.0" prefWidth="240.0" text="Diskus Bibliotek" textFill="#403123">
-         <font>
-            <Font name="System Bold Italic" size="24.0" />
-         </font>
-      </Label>
+      <ImageView fitHeight="84.0" fitWidth="82.0" layoutX="497.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/unknown.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
