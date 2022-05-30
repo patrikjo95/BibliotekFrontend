@@ -115,7 +115,7 @@ public class ControllerAdminDeleteBook {
             deleteBookErrorLabel.setText("Denna bok är tyvärr utlånad för tillfället.");
         } else if (response.contains("null")) {
             deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.LIGHTGREEN);
+            deleteBookErrorLabel.setTextFill(Color.GREEN);
             deleteBookErrorLabel.setText("Boken med ID " + bookID + " har raderats");
         }
     }
