@@ -9,12 +9,12 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAddBook">
    <children>
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="168.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="370.0" layoutX="35.0" layoutY="120.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="270.0" />
-      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="160.0" promptText="Title" />
+      <TextField fx:id="titleTextField" layoutX="45.0" layoutY="160.0" promptText="Titel" />
       <TextField fx:id="quantityTextField" layoutX="45.0" layoutY="210.0" promptText="Antal" />
       <TextField fx:id="authorTextField" layoutX="45.0" layoutY="260.0" promptText="Författare" />
       <TextField fx:id="genreTextField" layoutX="45.0" layoutY="310.0" promptText="Genre" />
@@ -29,8 +29,11 @@
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <Label fx:id="cConfirmationLabel" layoutX="173.0" layoutY="454.0" prefHeight="17.0" prefWidth="128.0" textFill="#0edd19" />
-      <Label fx:id="cErrorLabel" layoutX="40.0" layoutY="130.0" prefHeight="17.0" prefWidth="260.0" textAlignment="CENTER" textFill="#ff1414" />
+      <Label fx:id="cConfirmationLabel" alignment="CENTER" layoutX="173.0" layoutY="439.0" prefHeight="47.0" prefWidth="128.0" textAlignment="CENTER" textFill="#0edd19" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="cErrorLabel" alignment="CENTER" layoutX="40.0" layoutY="122.0" prefHeight="34.0" prefWidth="260.0" textAlignment="CENTER" textFill="#ff1414" wrapText="true" />
       <Button fx:id="cAddBookBackButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAddBookBackButton" prefHeight="25.0" prefWidth="58.0" text="Tillbaka">
          <font>
             <Font name="System Italic" size="12.0" />
@@ -40,5 +43,10 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
+      <Label layoutX="207.0" layoutY="164.0" text="Titel" />
+      <Label layoutX="207.0" layoutY="214.0" text="Antal" />
+      <Label layoutX="207.0" layoutY="267.0" text="Författare" />
+      <Label layoutX="207.0" layoutY="314.0" text="Genre" />
+      <Label layoutX="207.0" layoutY="364.0" text="År" />
    </children>
 </AnchorPane>
