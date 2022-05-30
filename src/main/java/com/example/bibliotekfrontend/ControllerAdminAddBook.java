@@ -60,16 +60,16 @@ public class ControllerAdminAddBook {
         } else if (response.contains("Not valid year")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Det året är ogiltigt.");
+            cErrorLabel.setText("Var god skriv år i enbart siffror");
         } else if (response.contains("Its not year")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
-            cErrorLabel.setText("Var god skriv ett giltigt år.");
+            cErrorLabel.setText("Var god skriv år i enbart siffror.");
         } else if (response.contains("error qty int")) {
             cConfirmationLabel.setVisible(false);
             cErrorLabel.setVisible(true);
             cErrorLabel.setText("Inkorrekt kvantitet");
-        } else if (response.contains("0")) {
+        } else if (response.contains("success")) {
             cConfirmationLabel.setVisible(true);
             cErrorLabel.setVisible(false);
             cConfirmationLabel.setText("Du har lagt till en Bok!");
