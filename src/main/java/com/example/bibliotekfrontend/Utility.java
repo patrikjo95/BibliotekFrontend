@@ -1,15 +1,16 @@
 package com.example.bibliotekfrontend;
 
+import javafx.collections.ObservableList;
+
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
 
 public class Utility {
-
     public String encodeToURL(String inputString) {
         return URLEncoder.encode(inputString, StandardCharsets.UTF_8);
     }
 
+   
 
     public String trimResponse(String response){
         int first = 0;
@@ -48,7 +49,12 @@ public class Utility {
 
         return str;
     }
+    public String getID_roomFromSelectedString(String str) {
+        str = str.substring(str.indexOf("ID_room") +1);
+        str = str.substring(0, str.indexOf(" |"));;
 
+        return str;
+    }
 
 
 

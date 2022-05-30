@@ -12,11 +12,14 @@ public class ControllerCustomerScheduleRoom {
         a.changeScene("customerLoginFirstPage.fxml");
 
     }
+
     @FXML
     private void cGoToRoomOnePage(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("customerRoomOnePage.fxml");
     }
+
+
 
 
     @FXML
@@ -41,4 +44,6 @@ public class ControllerCustomerScheduleRoom {
         a.changeScene("customerRoomFivePage.fxml");
     }
 
-}
+
+    }
+
