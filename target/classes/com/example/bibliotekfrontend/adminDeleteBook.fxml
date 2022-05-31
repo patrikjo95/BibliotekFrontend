@@ -34,10 +34,10 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="30.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="30.0" prefHeight="17.0" prefWidth="187.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
       <Text fx:id="helpText" layoutX="194.0" layoutY="68.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
-      <TextField layoutX="39.0" layoutY="303.0" promptText="ISBN" />
-      <Button layoutX="75.0" layoutY="334.0" mnemonicParsing="false" text="Radera titel">
+      <TextField fx:id="inputISBN_TextField" layoutX="39.0" layoutY="303.0" promptText="ISBN" />
+      <Button layoutX="75.0" layoutY="334.0" mnemonicParsing="false" onAction="#cDeleteBookISBN_Button" text="Radera titel">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
@@ -48,7 +48,7 @@
             <Label layoutX="6.0" layoutY="27.0" prefHeight="25.0" prefWidth="344.0" text="Skriv ISBN och nummer i formatet &quot;ISBN x&quot; för att söka på ISBN" />
          </children>
       </AnchorPane>
-      <Label layoutX="55.0" layoutY="236.0" text="RADERA TITEL ERROR" textFill="RED" visible="false" />
-      <Label fx:id="errorISBN" layoutX="27.0" layoutY="254.0" prefHeight="46.0" prefWidth="194.0" />
+      <Label layoutX="55.0" layoutY="236.0" prefHeight="60.0" prefWidth="159.0" text="RADERA TITEL ERROR" textFill="RED" visible="false" />
+      <Label fx:id="errorISBN" layoutX="23.0" layoutY="252.0" prefHeight="46.0" prefWidth="204.0" wrapText="true" />
    </children>
 </AnchorPane>
