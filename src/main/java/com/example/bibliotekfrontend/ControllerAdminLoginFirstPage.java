@@ -73,7 +73,7 @@ public class ControllerAdminLoginFirstPage implements Initializable {
     @FXML
     private void cGoToAdminSearchCustomerPage(ActionEvent event) throws IOException {
         Application application = new Application();
-        application.changeScene("AdminSearchForCustomer.fxml");
+        application.changeScene("adminSearchForCustomer.fxml");
     }
 
     @FXML
@@ -96,4 +96,9 @@ public class ControllerAdminLoginFirstPage implements Initializable {
 
     @FXML
     private ListView listViewBorrowedBooksSpecificCustomer;
+
+    public void cGoToBorrowedBooksPage(ActionEvent actionEvent) throws IOException {
+        Application application = new Application();
+        application.changeScene("adminAllBorrowedBooksPage.fxml");
+    }
 }
