@@ -94,7 +94,7 @@ public class ControllerCustomerMyPage implements Initializable {
         for (int i = 0; i < array.length(); i++) {
             object = array.getJSONObject(i);
             System.out.println(object);
-            listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
+            listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
             System.out.println(listViewBorrowedBooksSpecificCustomer);
         }
     }

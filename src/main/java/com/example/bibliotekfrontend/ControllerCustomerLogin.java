@@ -73,7 +73,7 @@ public class ControllerCustomerLogin {
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
             errorLabelLoginCustomer.setText("Fel PIN!");
-        } else if (response.contains(customer_pnr)) {
+        } else if (response.contains("success")) {
             try {
                 FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
                 myWriter.write(customer_pnr);

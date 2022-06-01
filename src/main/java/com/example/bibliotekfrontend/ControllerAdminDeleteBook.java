@@ -65,8 +65,11 @@ public class ControllerAdminDeleteBook {
 
     public void populateListViewDeleteBooks() {
         Platform.runLater(() -> {
+            searchBookList.requestFocus();
             String input = u.encodeToURL(searchBooksTextField.getText());
             searchBookList.getItems().clear();
+            searchBookList.getSelectionModel().select(0);
+
             response = connectionManager.sendGetRequest("/search_for_a_book_admin?check_book=" + input);
             response = u.trimResponse(response);
             //System.out.println("Response: " + response);
