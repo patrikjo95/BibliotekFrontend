@@ -29,8 +29,6 @@ public class ControllerCustomerLogin {
 
     ConnectionManager connectionManager = new ConnectionManager();
 
-    // ControllerCustomerLoginFirstPage controllerCustomerLoginFirstPage = new ControllerCustomerLoginFirstPage();
-
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -67,15 +65,11 @@ public class ControllerCustomerLogin {
         response = connectionManager.sendGetRequest("/login_customer/?test_pnr=" + customer_pnr + "&test_pin=" + customer_pin);
         System.out.println(response);
 
-        // errorLabelLoginCustomer
-
         if (response.contains("wrong pnr")) {
-            //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
             errorLabelLoginCustomer.setText("Detta personnummer kunde inte hittas i vårat register.");
         } else if (response.contains("wrong pin")) {
-            //cConfirmationLabel.setVisible(false);
             errorLabelLoginCustomer.setVisible(true);
             errorLabelLoginCustomer.setTextFill(Color.RED);
             errorLabelLoginCustomer.setText("Fel PIN!");
@@ -92,15 +86,5 @@ public class ControllerCustomerLogin {
                 e.printStackTrace();
             }
         }
-        /*
-        else if (response.contains()) {
-            cConfirmationLabel.setVisible(true);
-            errorLabelLoginCustomer.setVisible(false);
-            cConfirmationLabel.setText("Du har lagt till en Bok!");
-        }
-
-         */
-
-
     }
 }

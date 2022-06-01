@@ -7,9 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,14 +47,33 @@ public class ControllerCustomerRoomOnePage implements Initializable {
     @FXML
     private Button buttonLoad;
 
+
+
     Utility u = new Utility();
     private String response;
     ConnectionManager connectionManager = new ConnectionManager();
     JSONObject object = new JSONObject();
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+       // col_ID_Room.setCellValueFactory(new PropertyValueFactory<>("StudentId"));
+        //col_Date.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        //col_0910 .setCellValueFactory(new PropertyValueFactory<>("09.00-10.00"));
+        //col_1011 .setCellValueFactory(new PropertyValueFactory<>("10.00-11.00"));
+        //col_1112 .setCellValueFactory(new PropertyValueFactory<>("11.00-12.00"));
+        //col_1213 .setCellValueFactory(new PropertyValueFactory<>("12.00-13.00"));
+        //col_1314 .setCellValueFactory(new PropertyValueFactory<>("13.00-14.00"));
+        //col_1415 .setCellValueFactory(new PropertyValueFactory<>("14.00-15.00"));
+        //col_1516 .setCellValueFactory(new PropertyValueFactory<>("15.00-16.00"));
+        //col_1617 .setCellValueFactory(new PropertyValueFactory<>("16.00-17.00"));
+        //col_1718 .setCellValueFactory(new PropertyValueFactory<>("17.00-18.00"));
+
+
+
+
+
 
 
     }
@@ -70,7 +89,7 @@ public class ControllerCustomerRoomOnePage implements Initializable {
     private void cLoadDataFromDatabaseButton(ActionEvent event) throws IOException {
         Platform.runLater(() -> {
             tableCalender.getItems().clear();
-            response = connectionManager.sendGetRequest("/one_month_calender"); //
+            response = connectionManager.sendGetRequest("/one_month_calender=");
             response = u.trimResponse(response);
 
             JSONArray array = new JSONArray(response);
@@ -88,11 +107,15 @@ public class ControllerCustomerRoomOnePage implements Initializable {
                 tableCalender.getItems().add(col_1516 + object.getString("15.00-16.00"));
                 tableCalender.getItems().add(col_1617 + object.getString("16.00-17.00"));
                 tableCalender.getItems().add(col_1718 + object.getString("17.00-18.00"));
+                //tableCalender.setItems((ObservableList<String>) object); //adding data to the table here.
+                //tableCalender.setItems((ObservableList<String>) object);
+                //tableCalender.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+
 
 
             }
         });
-
 
     }
 
@@ -101,8 +124,19 @@ public class ControllerCustomerRoomOnePage implements Initializable {
         tableCalender.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                String selectedCalenderString = tableCalender.getSelectionModel().getSelectedItem();
-                String selectedID_room = u.getID_roomFromSelectedString(selectedCalenderString);
+                tableCalender.setItems((ObservableList<String>) object);
+                tableCalender.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+                TableView.TableViewSelectionModel<String> selectionModel = tableCalender.getSelectionModel();
+                ObservableList<String> selectedItems = selectionModel.getSelectedItems();
+                buttonLoad.setText(String.valueOf(selectedItems));
+
+
+
+
+
+
+
+
 
 
 

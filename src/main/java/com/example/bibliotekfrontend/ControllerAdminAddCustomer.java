@@ -77,7 +77,7 @@ public class ControllerAdminAddCustomer {
                 errorRegisterConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setVisible(false);
                 errorRegisterConfirmationLabel.setText("Var god skriv in enbart siffror för PIN");
-            } else {
+            } else if (response.contains("success")){
                 errorRegisterConfirmationLabel.setVisible(false);
                 registerConfirmationLabel.setVisible(true);
                 registerConfirmationLabel.setText("En ny medlem har skapats!");

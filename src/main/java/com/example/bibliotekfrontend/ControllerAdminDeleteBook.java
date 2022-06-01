@@ -40,6 +40,9 @@ public class ControllerAdminDeleteBook {
     private TextField searchBooksTextField;
     @FXML
     private TextField bookIDTextField;
+
+    @FXML
+    private TextField inputISBN_TextField;
     @FXML
     private Button deleteBookButton;
     @FXML
@@ -56,6 +59,11 @@ public class ControllerAdminDeleteBook {
 
     @FXML
     private void cSearchBooksButton(ActionEvent event) {
+        populateListViewDeleteBooks();
+
+    }
+
+    public void populateListViewDeleteBooks() {
         Platform.runLater(() -> {
             String input = u.encodeToURL(searchBooksTextField.getText());
             searchBookList.getItems().clear();
@@ -73,7 +81,6 @@ public class ControllerAdminDeleteBook {
             }
 
         });
-
     }
 
     @FXML
@@ -98,9 +105,9 @@ public class ControllerAdminDeleteBook {
     }
 
     @FXML
-    public void cDeleteBookButton(ActionEvent event) {
+    private void cDeleteBookButton(ActionEvent event) {
         String bookID = u.encodeToURL(bookIDTextField.getText());
-        response = connectionManager.sendGetRequest("/deleteBookByID/?ID_book=" + bookID);
+        response = connectionManager.sendGetRequest("/delete_book_ID/?ID_book=" + bookID);
 
         if (response.contains("this is not int")) {
             deleteBookErrorLabel.setVisible(true);
@@ -110,11 +117,41 @@ public class ControllerAdminDeleteBook {
             deleteBookErrorLabel.setVisible(true);
             deleteBookErrorLabel.setTextFill(Color.RED);
             deleteBookErrorLabel.setText("Detta ID finns ej.");
-        } else if (response.contains("null")) {
+        } else if (response.contains("Borrowed")) {
             deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.LIGHTGREEN);
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("Denna bok är tyvärr utlånad för tillfället.");
+        } else if (response.contains("success")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.GREEN);
             deleteBookErrorLabel.setText("Boken med ID " + bookID + " har raderats");
         }
+        populateListViewDeleteBooks();
+    }
+
+    @FXML
+    private void cDeleteBookISBN_Button(ActionEvent event) {
+        String selected_ISBN_book = u.encodeToURL(inputISBN_TextField.getText());
+        response = connectionManager.sendGetRequest("/delete_book_ISBN/?selected_ISBN_book=" + selected_ISBN_book);
+        System.out.println(response);
+        if (response.contains("is not int")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("Var god skriv enbart siffror.");
+        } else if (response.contains("ISBN Does not exist")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("Detta ISBN finns ej.");
+        } else if (response.contains("Borrowed books isbn")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.RED);
+            deleteBookErrorLabel.setText("Detta ISBN har utlånade bok/böcker för tillfället.");
+        } else if (response.contains("success")) {
+            deleteBookErrorLabel.setVisible(true);
+            deleteBookErrorLabel.setTextFill(Color.GREEN);
+            deleteBookErrorLabel.setText("Boken/Böckerna med ISBN " + selected_ISBN_book + " har raderats");
+        }
+        populateListViewDeleteBooks();
     }
 
     @FXML
@@ -126,4 +163,26 @@ public class ControllerAdminDeleteBook {
     private void cHelpPopup(MouseEvent mouseEvent) {
         helpPopUp.setVisible(true);
     }
+
+    /*
+    private void populateListViewCustomerBorrowedBooks() {
+        listViewBorrowedBooksSpecificCustomer.getItems().clear();
+        response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_file);
+        System.out.println(response);
+        //listViewBorrowedBooksSpecificCustomer.;
+
+        response = utility.trimResponse(response);
+        System.out.println(response);
+        // nedan error
+        JSONArray array = new JSONArray(response);
+        System.out.println(array);
+
+        for (int i = 0; i < array.length(); i++) {
+            object = array.getJSONObject(i);
+            System.out.println(object);
+            listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
+            System.out.println(listViewBorrowedBooksSpecificCustomer);
+        }
+    }
+     */
 }

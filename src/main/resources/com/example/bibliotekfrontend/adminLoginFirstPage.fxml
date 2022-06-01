@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLoginFirstPage">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLoginFirstPage">
    <children>
-      <TabPane layoutY="36.0" prefHeight="515.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="528.0" layoutY="3.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="67.0" />
+      <Button fx:id="cAdminLogoutButton" layoutX="530.0" layoutY="5.0" mnemonicParsing="false" onAction="#cAdminLogoutButton" text="Logga ut">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></Button>
+      <TabPane layoutY="36.0" prefHeight="515.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="36.0">
         <tabs>
-          <Tab text="Böcker">
+          <Tab style="-fx-background-color: b9a0a0;" text="Böcker">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: c39351;">
                      <children>
-                        <Rectangle fill="#bf7f3f" height="491.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
-                        <Button fx:id="AddBookButton" layoutX="54.0" layoutY="45.0" mnemonicParsing="false" onAction="#cGoToAddBookPage" text="Lägg till bok" />
-                        <Button fx:id="ShowBookButton" layoutX="54.0" layoutY="92.0" mnemonicParsing="false" onAction="#cGoToShowBookPage" text="Visa bok" />
-                        <Button fx:id="UpdateBookButton" layoutX="54.0" layoutY="139.0" mnemonicParsing="false" onAction="#cGoToUpdateBookPage" text="Uppdatera bok" />
-                        <Button fx:id="DeleteBookButton" layoutX="54.0" layoutY="183.0" mnemonicParsing="false" onAction="#cGoToDeleteBookPage" text="Radera bok" />
+                        <Rectangle fill="#b9a0a0" height="491.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="200.0" layoutX="32.0" layoutY="32.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="140.0" />
+                        <Button fx:id="AddBookButton" layoutX="54.0" layoutY="45.0" mnemonicParsing="false" onAction="#cGoToAddBookPage" text="Lägg till bok">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="ShowBookButton" layoutX="54.0" layoutY="92.0" mnemonicParsing="false" onAction="#cGoToShowBookPage" text="Visa bok">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="UpdateBookButton" layoutX="54.0" layoutY="139.0" mnemonicParsing="false" onAction="#cGoToUpdateBookPage" text="Uppdatera bok">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="DeleteBookButton" layoutX="54.0" layoutY="183.0" mnemonicParsing="false" onAction="#cGoToDeleteBookPage" text="Radera bok">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
                         <ImageView fitHeight="253.0" fitWidth="402.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/Logo_bibliotek.png" />
@@ -35,18 +55,44 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Kunder">
+          <Tab style="-fx-background-color: b97768;" text="Kunder">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: c39351;">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b97768" height="503.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
-                        <Button fx:id="AddCustomerButton" layoutX="54.0" layoutY="55.0" mnemonicParsing="false" onAction="#cGoToAddCustomerAdminPage" text="Lägg till kund" />
-                        <Button layoutX="54.0" layoutY="103.0" mnemonicParsing="false" text="Boka ett rum" />
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="167.0" layoutX="22.0" layoutY="22.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="160.0" />
+                        <Button fx:id="AddCustomerButton" layoutX="54.0" layoutY="45.0" mnemonicParsing="false" onAction="#cGoToAddCustomerAdminPage" text="Lägg till kund">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
+                        <Button layoutX="54.0" layoutY="92.0" mnemonicParsing="false" text="Boka ett rum">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font></Button>
+                        <ImageView fitHeight="253.0" fitWidth="402.0" layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/Logo_bibliotek.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="257.0" fitWidth="281.0" layoutX="282.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/unknown.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="54.0" layoutY="136.0" mnemonicParsing="false" onAction="#cGoToAdminSearchCustomerPage" prefHeight="25.0" prefWidth="84.0" text="Sök kund">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="cAdminLogoutButton" layoutX="538.0" layoutY="2.0" mnemonicParsing="false" onAction="#cAdminLogoutButton" text="Logga ut" />
+      <Label fx:id="adminLoggedInAsEmail" layoutX="14.0" layoutY="6.0" prefHeight="25.0" prefWidth="500.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
