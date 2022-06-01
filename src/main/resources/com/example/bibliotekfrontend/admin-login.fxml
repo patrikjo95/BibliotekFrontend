@@ -5,23 +5,33 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLogin">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminLogin">
     <children>
-        <Label alignment="CENTER" layoutX="166.0" layoutY="117.0" prefHeight="53.0" prefWidth="270.0" text="Admin Login">
+      <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="169.0" layoutY="-139.0" startX="-181.5" startY="128.02890014648438" stroke="BLACK" strokeDashOffset="1.0" strokeWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="352.0" layoutX="160.0" layoutY="74.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="283.0" />
+        <Label alignment="CENTER" layoutX="166.0" layoutY="117.0" lineSpacing="1.0" prefHeight="53.0" prefWidth="270.0" text="Admin Login" underline="true">
          <font>
-            <Font size="36.0" />
+            <Font name="System Bold Italic" size="36.0" />
          </font></Label>
-        <TextField layoutX="226.0" layoutY="208.0" promptText="Användarnamn" />
-        <PasswordField layoutX="226.0" layoutY="250.0" promptText="Lösenord" />
-        <Button fx:id="loginAdminButton" layoutX="278.0" layoutY="296.0" mnemonicParsing="false" onAction="#cGoToLoginAdmin" text="Login">
+        <TextField fx:id="usernameTextField" layoutX="226.0" layoutY="208.0" promptText="Användarnamn" />
+        <PasswordField fx:id="passwordTextField" layoutX="226.0" layoutY="250.0" promptText="Lösenord" />
+        <Button fx:id="loginAdminButton" layoutX="270.0" layoutY="294.0" mnemonicParsing="false" onAction="#cSendAdminLoginDataToBackEnd" text="Logga in">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-        <Button fx:id="backToFrontPageButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Tillbaks till förstasidan">
+        <Button fx:id="backToFrontPageButton" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackToFirstPage" text="Tillbaka">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
+      <Label fx:id="adminLoginError" alignment="CENTER" layoutX="162.0" layoutY="162.0" prefHeight="47.0" prefWidth="279.0" textAlignment="CENTER" textFill="#f80000" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

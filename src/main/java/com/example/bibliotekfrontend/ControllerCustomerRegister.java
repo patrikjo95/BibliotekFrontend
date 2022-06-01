@@ -80,7 +80,7 @@ public class ControllerCustomerRegister {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
                 registerLabel.setText("Var god skriv in enbart siffror för PIN");
-            } else {
+            } else if (response.contains("success")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.GREEN);
                 registerLabel.setText("En ny medlem har skapats!");
