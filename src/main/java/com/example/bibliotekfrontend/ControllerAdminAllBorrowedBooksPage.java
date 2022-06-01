@@ -19,15 +19,15 @@ public class ControllerAdminAllBorrowedBooksPage implements Initializable {
     @FXML
     private TableColumn<BorrowedBook, String> PNRColumn;
     @FXML
-    private TableColumn<BorrowedBook, String>  BookIDColumn;
+    private TableColumn<BorrowedBook, String> bookIDColumn;
     @FXML
-    private TableColumn<BorrowedBook, String>  BookTitleColumn;
+    private TableColumn<BorrowedBook, String> bookTitleColumn;
     @FXML
-    private TableColumn<BorrowedBook, String>  BookAuthorColumn;
+    private TableColumn<BorrowedBook, String> bookAuthorColumn;
     @FXML
-    private TableColumn<BorrowedBook, String>  BookYearColumn;
+    private TableColumn<BorrowedBook, String> bookYearColumn;
     @FXML
-    private TableColumn<BorrowedBook, String>  ReturnDateColumn;
+    private TableColumn<BorrowedBook, String> returnDateColumn;
     @FXML
     private TableView<BorrowedBook> allBorrowedBooksTable;
 
@@ -52,11 +52,11 @@ public class ControllerAdminAllBorrowedBooksPage implements Initializable {
         ObservableList<BorrowedBook> list = populateTable();
 
         PNRColumn.setCellValueFactory(new PropertyValueFactory<>("customerPNR"));
-        BookIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID_book"));
-        BookTitleColumn.setCellValueFactory(new PropertyValueFactory<>("book_title"));
-        BookAuthorColumn.setCellValueFactory(new PropertyValueFactory<>("book_author"));
-        BookYearColumn.setCellValueFactory(new PropertyValueFactory<>("book_year"));
-        ReturnDateColumn.setCellValueFactory(new PropertyValueFactory<>("return_date"));
+        bookIDColumn.setCellValueFactory(new PropertyValueFactory<>("ID_book"));
+        bookTitleColumn.setCellValueFactory(new PropertyValueFactory<>("book_title"));
+        bookAuthorColumn.setCellValueFactory(new PropertyValueFactory<>("book_author"));
+        bookYearColumn.setCellValueFactory(new PropertyValueFactory<>("book_year"));
+        returnDateColumn.setCellValueFactory(new PropertyValueFactory<>("return_date"));
 
         allBorrowedBooksTable.setItems(list);
 
@@ -78,7 +78,7 @@ public class ControllerAdminAllBorrowedBooksPage implements Initializable {
         for (int i = 0; i < array.length(); i++) {
             object = array.getJSONObject(i);
 
-            BorrowedBook borrowedBook = new BorrowedBook(object.getString("Personnummer"), object.getString("Bok ID"), object.getString("Titel"), object.getString("Författare"), object.getString("Utgivningsår"), object.getString("Återlämnas senast"));
+            BorrowedBook borrowedBook = new BorrowedBook(object.getString("Personnummer"), object.getInt("Bok ID"), object.getString("Titel"), object.getString("Författare"), object.getInt("Utgivningsår"), object.getString("Återlämnas senast"));
 
             System.out.println("borrowedBook" + borrowedBook);
 
