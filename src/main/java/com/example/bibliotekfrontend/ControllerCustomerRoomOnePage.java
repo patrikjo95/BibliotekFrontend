@@ -2,6 +2,7 @@ package com.example.bibliotekfrontend;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,14 +46,20 @@ public class ControllerCustomerRoomOnePage implements Initializable {
     @FXML
     private TableColumn<String, String> col_1718;
     @FXML
-    private Button buttonLoad;
-
+    private Button buttonLoad;  // belongs to cLoadDataFromDatabaseButton
+    @FXML
+    private Button BookRoom;
 
 
     Utility u = new Utility();
     private String response;
     ConnectionManager connectionManager = new ConnectionManager();
     JSONObject object = new JSONObject();
+
+    public void settCalender(String calender) {
+        response = calender;
+    }
+
 
 
 
@@ -88,14 +95,23 @@ public class ControllerCustomerRoomOnePage implements Initializable {
     @FXML
     private void cLoadDataFromDatabaseButton(ActionEvent event) throws IOException {
         Platform.runLater(() -> {
+            //String input = u.encodeToURL(buttonLoad.getText());
             tableCalender.getItems().clear();
-            response = connectionManager.sendGetRequest("/one_month_calender=");
+            response = connectionManager.sendGetRequest("/Room_calender?room_name_live=ture2");
+            System.out.println(response);
             response = u.trimResponse(response);
 
+
             JSONArray array = new JSONArray(response);
+            ObservableList items = FXCollections.observableArrayList();
+            tableCalender.setItems((items));
+           // ObservableList items = FXCollections.observableArrayList(array);
+            //tableCalender.setItems(items);
+
 
             for (int i = 0; i < array.length(); i++) {
                 object = array.getJSONObject(i);
+
                 tableCalender.getItems().add(col_ID_Room + object.getString("ID_room"));
                 tableCalender.getItems().add(col_Date + object.getString("Date"));
                 tableCalender.getItems().add(col_0910 + object.getString("09.00-10.00"));
@@ -107,9 +123,8 @@ public class ControllerCustomerRoomOnePage implements Initializable {
                 tableCalender.getItems().add(col_1516 + object.getString("15.00-16.00"));
                 tableCalender.getItems().add(col_1617 + object.getString("16.00-17.00"));
                 tableCalender.getItems().add(col_1718 + object.getString("17.00-18.00"));
-                //tableCalender.setItems((ObservableList<String>) object); //adding data to the table here.
-                //tableCalender.setItems((ObservableList<String>) object);
-                //tableCalender.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+
 
 
 

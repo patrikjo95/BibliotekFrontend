@@ -2,10 +2,15 @@ package com.example.bibliotekfrontend;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 
 public class ControllerCustomerScheduleRoom {
+    String calender;
+    public void settCalender(String response) {
+        calender = response;
+    }; // ta emot respons typen.
     @FXML
     private void cGoBackToCustomerPage(ActionEvent event) throws IOException {
         Application a = new Application();
@@ -16,6 +21,12 @@ public class ControllerCustomerScheduleRoom {
     @FXML
     private void cGoToRoomOnePage(ActionEvent event) throws IOException {
         Application a = new Application();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("customerRoomOnePage.fxml"));
+        loader.load();
+
+        ControllerCustomerRoomOnePage RoomOne = loader.getController();
+        RoomOne.settCalender(calender);
         a.changeScene("customerRoomOnePage.fxml");
     }
 

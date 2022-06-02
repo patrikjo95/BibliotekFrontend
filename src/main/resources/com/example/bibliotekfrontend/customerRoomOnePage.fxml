@@ -25,7 +25,7 @@
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <TableView fx:id="tableCalender" layoutX="-8.0" layoutY="245.0" onMouseClicked="#cTableView" prefHeight="238.0" prefWidth="607.0">
+      <TableView fx:id="tableCalender" layoutX="-8.0" layoutY="245.0" onMouseClicked="#cTableView" prefHeight="238.0" prefWidth="843.0">
         <columns>
           <TableColumn fx:id="col_ID_Room" prefWidth="75.0" text="ID_Room" />
           <TableColumn fx:id="col_Date" prefWidth="75.0" text="Date" />
@@ -37,12 +37,7 @@
             <TableColumn fx:id="col_1415" prefWidth="60.0" text="14:00-15:00" />
             <TableColumn fx:id="col_1516" prefWidth="60.0" text="15:00-16:00" />
             <TableColumn fx:id="col_1617" prefWidth="60.0" text="16:00-17:00" />
-            <TableColumn fx:id="col_1718" prefWidth="60.0" text="17:00-18:00">
-
-               <columns>
-                  <TableColumn prefWidth="75.0" text="Column X" />
-               </columns>
-            </TableColumn>
+            <TableColumn fx:id="col_1718" prefWidth="60.0" text="17:00-18:00" />
         </columns>
       </TableView>
       <Button fx:id="buttonLoad" layoutX="497.0" layoutY="498.0" mnemonicParsing="false" onAction="#cLoadDataFromDatabaseButton" text="Se lediga tider">

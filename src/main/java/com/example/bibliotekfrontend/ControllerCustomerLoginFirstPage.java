@@ -1,12 +1,16 @@
 package com.example.bibliotekfrontend;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,6 +20,10 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class ControllerCustomerLoginFirstPage implements Initializable {
+    Utility u = new Utility();
+    private String response;
+    ConnectionManager connectionManager = new ConnectionManager();
+    JSONObject object = new JSONObject();
 
 
     @Override
@@ -65,7 +73,24 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
     @FXML
     private void cGoToRoomFirstPage(ActionEvent event) throws IOException {
         Application a = new Application();
+
+        // Aktivera Store procedure one_month_calender
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("customerScheduleRoom.fxml"));
+        Parent root = loader.load();
+
+        ControllerCustomerScheduleRoom scheduleRoom = loader.getController();
+
+
+        response = connectionManager.sendGetRequest("/one_month_calender");
+            System.out.println(response);
+            response = u.trimResponse(response);
+            scheduleRoom.settCalender(response);
+
         a.changeScene("customerScheduleRoom.fxml");
+
+
+
     }
 
     @FXML
