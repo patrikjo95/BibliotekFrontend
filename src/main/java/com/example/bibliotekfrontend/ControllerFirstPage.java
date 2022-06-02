@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ import com.google.gson.Gson;
 
 public class ControllerFirstPage {
 
+
     private Gson gson = new Gson();
     Utility u = new Utility();
 
@@ -29,16 +31,17 @@ public class ControllerFirstPage {
     private String response;
 
     @FXML
+    private ListView displayPopularBooksListView;
+    @FXML
+    private ChoiceBox changeGenreChoiseBox;
+    @FXML
     private Button customerLoginButton;
     @FXML
     private Button adminLoginButton;
     @FXML
     private TextField searchBooksTextField;
     @FXML
-    private Button searchBooksButton;
-    @FXML
     private ListView<String> searchBookList;
-
 
     ConnectionManager connectionManager = new ConnectionManager();
     @FXML

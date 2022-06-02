@@ -18,11 +18,11 @@
       <TableView fx:id="allBorrowedBooksTable" layoutX="12.0" layoutY="46.0" prefHeight="458.0" prefWidth="576.0">
         <columns>
           <TableColumn fx:id="PNRColumn" editable="false" prefWidth="93.0" text="Personnummer" />
-          <TableColumn fx:id="BookIDColumn" editable="false" prefWidth="44.0" text="Bok ID" />
-            <TableColumn fx:id="BookTitleColumn" editable="false" prefWidth="121.0" text="Titel" />
-            <TableColumn fx:id="BookAuthorColumn" editable="false" prefWidth="128.0" text="Författare" />
-            <TableColumn fx:id="BookYearColumn" editable="false" prefWidth="78.0" text="Utgivningsår" />
-            <TableColumn fx:id="ReturnDateColumn" editable="false" prefWidth="111.0" text="Återlämnas Senast" />
+          <TableColumn fx:id="bookIDColumn" editable="false" prefWidth="44.0" text="Bok ID" />
+            <TableColumn fx:id="bookTitleColumn" editable="false" prefWidth="121.0" text="Titel" />
+            <TableColumn fx:id="bookAuthorColumn" editable="false" prefWidth="128.0" text="Författare" />
+            <TableColumn fx:id="bookYearColumn" editable="false" prefWidth="78.0" text="Utgivningsår" />
+            <TableColumn fx:id="returnDateColumn" editable="false" prefWidth="111.0" text="Återlämnas Senast" />
         </columns>
       </TableView>
    </children>
