@@ -95,7 +95,7 @@ public class ControllerAdminAddBook implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         genreChoiceBox.getItems().removeAll(genreChoiceBox.getItems());
-        genreChoiceBox.getItems().addAll("Drama", "Thriller", "Komedi", "Fantasy", "Deckare", "Action & Äventyr", "Manga", "Mat & Dryck", "Resor", "Ungdom", "Filosofi & Religion", "Vetenskap & Teknik");
+        genreChoiceBox.getItems().addAll("Action & Äventyr",  "Deckare",  "Drama","Fantasy", "Filosofi & Religion", "Komedi",   "Manga", "Mat & Dryck", "Resor",  "Thriller","Ungdom", "Vetenskap & Teknik");
         genreChoiceBox.getSelectionModel().select("Drama");
 
     }
