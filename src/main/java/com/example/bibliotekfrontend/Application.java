@@ -35,6 +35,7 @@ public class Application extends javafx.application.Application {
     public void changeToFirstPage()throws IOException{
         start(newStage);
     }
+
     public void openPopup(String fxml)throws IOException{
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
@@ -48,7 +49,7 @@ public class Application extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
-
         launch();
     }
+
 }

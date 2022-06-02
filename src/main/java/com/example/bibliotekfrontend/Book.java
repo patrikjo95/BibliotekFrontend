@@ -2,16 +2,31 @@ package com.example.bibliotekfrontend;
 
 
 public class Book {
+    public String customerPNR;
     public String ID_book;
     public String book_title;
     public String book_qty;
     public String book_author;
     public String book_genre;
     public String book_year;
+
+
+
     public String book_URL;
     public String check_book;
+    public String returnDate;
 
-    public Book(String ID_book, String book_title, String book_qty, String book_author, String book_genre, String book_year, String book_URL) {
+    public Book(String customerPNR, String ID_book, String book_title, String book_author, String book_year, String returnDate) {
+        this.customerPNR = customerPNR;
+        this.ID_book = ID_book;
+        this.book_title = book_title;
+        this.book_author = book_author;
+        this.book_year = book_year;
+        this.returnDate = returnDate;
+
+    }
+
+    /*public Book(String ID_book, String book_title, String book_qty, String book_author, String book_genre, String book_year, String book_URL) {
         this.ID_book = ID_book;
         this.book_title = book_title;
         this.book_qty = book_qty;
@@ -19,19 +34,27 @@ public class Book {
         this.book_genre = book_genre;
         this.book_year = book_year;
         this.book_URL = book_URL;
-    }
+    }*/
 
-    public Book(String book_title, String book_qty, String book_author, String book_genre, String book_year, String book_url) {
+   /* public Book(String book_title, String book_qty, String book_author, String book_genre, String book_year, String book_url) {
         this.book_title = book_title;
         this.book_qty = book_qty;
         this.book_author = book_author;
         this.book_genre = book_genre;
         this.book_year = book_year;
         this.book_URL = book_url;
-    }
+    }*/
 
     public Book(String check_book){
         this.check_book = check_book;
+    }
+
+    public String getCustomerPNR() {
+        return customerPNR;
+    }
+
+    public void setCustomerPNR(String customerPNR) {
+        this.customerPNR = customerPNR;
     }
 
     public String getCheck_book() {
@@ -100,16 +123,20 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Books{" +
-                "ID_book=" + ID_book +
+        return "Book{" +
+                "customerPNR='" + customerPNR + '\'' +
+                ", ID_book='" + ID_book + '\'' +
                 ", book_title='" + book_title + '\'' +
-                ", book_qty=" + book_qty +
+                ", book_qty='" + book_qty + '\'' +
                 ", book_author='" + book_author + '\'' +
                 ", book_genre='" + book_genre + '\'' +
                 ", book_year='" + book_year + '\'' +
                 ", book_URL='" + book_URL + '\'' +
+                ", check_book='" + check_book + '\'' +
+                ", returnDate='" + returnDate + '\'' +
                 '}';
     }
+
 }
 
 

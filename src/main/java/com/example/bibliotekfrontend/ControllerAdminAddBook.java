@@ -1,17 +1,25 @@
 package com.example.bibliotekfrontend;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerAdminAddBook {
+public class ControllerAdminAddBook implements Initializable {
 
-
-    public Button cAddBookBackButton;
+    @FXML
+    private Button cAddBookBackButton;
+    @FXML
+    private ChoiceBox genreChoiceBox;
     @FXML
     private Label cConfirmationLabel;
     @FXML
@@ -47,7 +55,7 @@ public class ControllerAdminAddBook {
         String title = utility.encodeToURL(titleTextField.getText());
         String quantity = utility.encodeToURL(quantityTextField.getText());
         String author = utility.encodeToURL(authorTextField.getText());
-        String genre = utility.encodeToURL(genreTextField.getText());
+        String genre = utility.encodeToURL((String) genreChoiceBox.getSelectionModel().getSelectedItem());
         String year = utility.encodeToURL(yearTextField.getText());
         String urltext = utility.encodeToURL(urlTextField.getText());
         response = connectionManager.sendGetRequest("/insertBook/?new_book_title=" + title + "&new_book_qty=" + quantity + "&new_book_author=" + author + "&new_book_genre=" + genre + "&new_book_year=" + year + "&new_book_URL=" + urltext);
@@ -83,4 +91,12 @@ public class ControllerAdminAddBook {
         a.changeScene("adminLoginFirstPage.fxml");
     }
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        genreChoiceBox.getItems().removeAll(genreChoiceBox.getItems());
+        genreChoiceBox.getItems().addAll("Drama", "Thriller", "Komedi", "Fantasy", "Deckare", "Action & Äventyr", "Manga", "Mat & Dryck", "Resor", "Ungdom", "Filosofi & Religion", "Vetenskap & Teknik");
+        genreChoiceBox.getSelectionModel().select("Drama");
+
+    }
 }
