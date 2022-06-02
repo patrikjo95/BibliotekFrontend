@@ -56,6 +56,7 @@ public class ControllerAdminDeleteBook {
     private String response;
     ConnectionManager connectionManager = new ConnectionManager();
     JSONObject object = new JSONObject();
+    public String selected_ISBN_book;
 
     @FXML
     private void cSearchBooksButton(ActionEvent event) {
@@ -132,8 +133,9 @@ public class ControllerAdminDeleteBook {
     }
 
     @FXML
-    private void cDeleteBookISBN_Button(ActionEvent event) {
-        String selected_ISBN_book = u.encodeToURL(inputISBN_TextField.getText());
+    private void cDeleteBookISBN_Button(ActionEvent event) throws IOException {
+        Application a = new Application();
+        selected_ISBN_book = u.encodeToURL(inputISBN_TextField.getText());
         response = connectionManager.sendGetRequest("/delete_book_ISBN/?selected_ISBN_book=" + selected_ISBN_book);
         System.out.println(response);
         if (response.contains("is not int")) {
@@ -149,9 +151,9 @@ public class ControllerAdminDeleteBook {
             deleteBookErrorLabel.setTextFill(Color.RED);
             deleteBookErrorLabel.setText("Detta ISBN har utlånade bok/böcker för tillfället.");
         } else if (response.contains("success")) {
-            deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.GREEN);
-            deleteBookErrorLabel.setText("Boken/Böckerna med ISBN " + selected_ISBN_book + " har raderats");
+            System.out.println("hej");
+            System.out.println(response);
+            a.openPopup("areYouSureYouWantToDelete.fxml");
         }
         populateListViewDeleteBooks();
     }
@@ -164,6 +166,17 @@ public class ControllerAdminDeleteBook {
     @FXML
     private void cHelpPopup(MouseEvent mouseEvent) {
         helpPopUp.setVisible(true);
+    }
+
+    @FXML
+    private void cDeleteAllBooksWithThisISBN(ActionEvent event) {
+        connectionManager.sendGetRequest("/yes_delete/?ISBN=" + selected_ISBN_book);
+
+    }
+    @FXML
+    private void cGoBackToDeleteBook(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("AdminDeleteBook.fxml");
     }
 
     /*
