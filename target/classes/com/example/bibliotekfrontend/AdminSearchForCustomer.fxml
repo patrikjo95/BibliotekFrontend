@@ -9,44 +9,47 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminSearchCustomer">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminSearchCustomer">
    <children>
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="170.0" layoutY="-136.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="210.0" layoutX="69.0" layoutY="106.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="210.0" layoutX="69.0" layoutY="342.0" stroke="BLACK" strokeType="INSIDE" width="340.0" />
-      <ListView fx:id="listViewBorrowedBooksSpecificCustomer" layoutX="74.0" layoutY="111.0" onMouseClicked="#cSelectedBorrowedBookFromListViewToReturnAsAdmin" prefHeight="200.0" prefWidth="330.0" />
-      <Label alignment="CENTER" layoutX="64.0" layoutY="31.0" text="Sök kund" underline="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="32.0" layoutX="453.0" layoutY="183.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="121.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="33.0" layoutX="453.0" layoutY="422.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="88.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="10.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="206.0" layoutX="88.0" layoutY="343.0" stroke="#e8b87d" strokeType="OUTSIDE" strokeWidth="5.0" width="338.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="206.0" layoutX="88.0" layoutY="108.0" stroke="#e8b87d" strokeType="OUTSIDE" strokeWidth="5.0" width="338.0" />
+      <ListView fx:id="listViewBorrowedBooksSpecificCustomer" layoutX="92.0" layoutY="111.0" onMouseClicked="#cSelectedBorrowedBookFromListViewToReturnAsAdmin" prefHeight="200.0" prefWidth="330.0" />
+      <Label alignment="CENTER" layoutX="219.0" layoutY="11.0" text="Sök kund" underline="true">
          <font>
             <Font name="Arial Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="75.0" layoutY="76.0" text="Lånade böcker:">
+      <Label layoutX="104.0" layoutY="73.0" text="Lånade böcker:">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="415.0" layoutY="186.0" mnemonicParsing="false" onAction="#cReturnBookAsAdmin" text="Lämna tillbaka bok" />
-      <ListView layoutX="74.0" layoutY="347.0" prefHeight="200.0" prefWidth="330.0" />
-      <Label layoutX="74.0" layoutY="311.0" text="Bokade rum:">
+      <Button layoutX="456.0" layoutY="186.0" mnemonicParsing="false" onAction="#cReturnBookAsAdmin" text="Lämna tillbaka bok" />
+      <ListView layoutX="92.0" layoutY="346.0" prefHeight="200.0" prefWidth="330.0" />
+      <Label layoutX="104.0" layoutY="311.0" text="Bokade rum:">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="415.0" layoutY="426.0" mnemonicParsing="false" text="Avboka rum" />
-      <Button layoutX="6.0" layoutY="513.0" mnemonicParsing="false" onAction="#cButtonBackToAdminLoginFirstPage" text="Tillbaka" />
+      <Button layoutX="456.0" layoutY="426.0" mnemonicParsing="false" text="Avboka rum" />
+      <Button layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cButtonBackToAdminLoginFirstPage" text="Tillbaka" />
       <Label fx:id="adminLoggedInAsEmail" layoutX="6.0" layoutY="4.0" prefHeight="17.0" prefWidth="387.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="adminSearchCustPNR_Input" layoutX="429.0" layoutY="39.0" onAction="#cAdminSearchCustPNR_Button" prefHeight="25.0" prefWidth="163.0" />
-      <Label layoutX="430.0" layoutY="16.0" prefHeight="20.0" prefWidth="170.0" text="Kundens personnummer:">
+      <TextField fx:id="adminSearchCustPNR_Input" layoutX="416.0" layoutY="61.0" onAction="#cAdminSearchCustPNR_Button" prefHeight="25.0" prefWidth="163.0" />
+      <Label layoutX="416.0" layoutY="43.0" prefHeight="20.0" prefWidth="170.0" text="Kundens personnummer:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="493.0" layoutY="73.0" mnemonicParsing="false" onAction="#cAdminSearchCustPNR_Button" text="Sök" />
-      <Label fx:id="adminSearchCustPNR_Error" layoutX="247.0" layoutY="43.0" prefHeight="17.0" prefWidth="182.0" textFill="#e80000">
+      <Button layoutX="479.0" layoutY="91.0" mnemonicParsing="false" onAction="#cAdminSearchCustPNR_Button" text="Sök" />
+      <Label fx:id="adminSearchCustPNR_Error" layoutX="234.0" layoutY="64.0" prefHeight="17.0" prefWidth="182.0" textFill="#e80000">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
