@@ -47,6 +47,14 @@ public class Application extends javafx.application.Application {
         stage.setResizable(false);
         stage.show();
     }
+    public void openPopup2(String fxml)throws IOException{
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(fxml));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+    }
 
     public static void main(String[] args) {
         launch();
