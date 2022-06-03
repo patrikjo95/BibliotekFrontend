@@ -48,7 +48,9 @@
             <Label layoutX="6.0" layoutY="27.0" prefHeight="25.0" prefWidth="344.0" text="Skriv ISBN och nummer i formatet &quot;ISBN x&quot; för att söka på ISBN" />
          </children>
       </AnchorPane>
-      <Label layoutX="27.0" layoutY="214.0" prefHeight="46.0" prefWidth="180.0" text="RADERA TITEL ERROR" textFill="RED" visible="false" />
-      <Label fx:id="errorISBN" layoutX="22.0" layoutY="213.0" prefHeight="46.0" prefWidth="204.0" wrapText="true" />
+      <Label fx:id="errorISBN" alignment="CENTER" layoutX="22.0" layoutY="213.0" prefHeight="46.0" prefWidth="204.0" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>

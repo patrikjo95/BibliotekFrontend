@@ -33,8 +33,6 @@ public class ControllerAdminLoginFirstPage implements Initializable {
     @FXML
     private Button DeleteBookButton;
     @FXML
-    private Button ShowBookButton;
-    @FXML
     private Button cAdminLogoutButton;
 
 
@@ -45,7 +43,7 @@ public class ControllerAdminLoginFirstPage implements Initializable {
     }
 
     @FXML
-    private void cGoToUpdateBookPage(ActionEvent event) {
+    private void cGoToUpdateBookPage(ActionEvent event) throws IOException {
     }
 
     @FXML
@@ -54,9 +52,6 @@ public class ControllerAdminLoginFirstPage implements Initializable {
         a.changeScene("adminDeleteBook.fxml");
     }
 
-    @FXML
-    private void cGoToShowBookPage(ActionEvent event) {
-    }
 
     @FXML
     private void cAdminLogoutButton(ActionEvent event) throws IOException {
