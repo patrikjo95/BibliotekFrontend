@@ -107,6 +107,7 @@ public class ControllerAdminDeleteBook{
                 String selectedBookString = searchBookList.getSelectionModel().getSelectedItem();
                 String selectedIsbn = u.getIsbnFromString(selectedBookString);
                 bookIDTextField.setText(String.valueOf(selectedIsbn));
+
             }
         });
     }

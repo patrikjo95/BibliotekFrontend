@@ -10,12 +10,12 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerScheduleRoom">
    <children>
-      <Text layoutX="9.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" underline="true">
+      <Text layoutX="14.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" underline="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="9.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" underline="true">
+      <Text layoutX="9.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" underline="true">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -25,11 +25,6 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="ToRoomOne" layoutX="101.0" layoutY="170.0" mnemonicParsing="false" onAction="#cGoToRoomOnePage" text="Se lediga rum">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Button>
       <Button fx:id="ToRoomFive" layoutX="581.0" layoutY="509.0" mnemonicParsing="false" onAction="#cGoToRoomFivePage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
@@ -50,7 +45,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="ToRoomTwo" layoutX="84.0" layoutY="347.0" mnemonicParsing="false" onAction="#cGoToRoomTwoPage" text="Se lediga rum">
+      <Button fx:id="ToRoomTwo" layoutX="84.0" layoutY="415.0" mnemonicParsing="false" onAction="#cGoToRoomTwoPage" text="Se lediga rum">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
@@ -66,17 +61,12 @@
          </font>
       </Button>
       <Label layoutX="186.0" layoutY="100.0" text="Label" textFill="#dc8431" />
-      <ImageView fitHeight="190.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/Rum1.jpg" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="190.0" fitWidth="230.0" layoutX="473.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Rum2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-8.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-14.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Rum3.jpg" />
          </image>
@@ -91,5 +81,15 @@
             <Image url="@images/Rum5.jpg" />
          </image>
       </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="9.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/Rum1.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="112.0" layoutY="169.0" mnemonicParsing="false" onAction="#cGoToRoomOnePage" text="Se lediga rum">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
