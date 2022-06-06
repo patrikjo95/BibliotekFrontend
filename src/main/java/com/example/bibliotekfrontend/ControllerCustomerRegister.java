@@ -75,7 +75,7 @@ public class ControllerCustomerRegister {
             } else if (response.contains("length pin")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);
-                registerLabel.setText("Var god skriv in fyra siffror för PIN\"");
+                registerLabel.setText("Var god skriv in fyra siffror för PIN");
             } else if (response.contains("pin is not int")) {
                 registerLabel.setVisible(true);
                 registerLabel.setTextFill(Color.RED);

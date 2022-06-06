@@ -73,7 +73,7 @@ public class ControllerCustomerRoomOnePage implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-            ObservableList<RoomCalender> list = cLoadDataFromDatabase("ture2");
+            ObservableList<RoomCalender> list = cLoadDataFromDatabase("vattenmelon");
 
         col_Date.setCellValueFactory(new PropertyValueFactory<>("Date"));
         col_0910.setCellValueFactory(new PropertyValueFactory<>("firstTime"));
@@ -135,7 +135,7 @@ public class ControllerCustomerRoomOnePage implements Initializable {
                         object.getString("16.00-17.00"),
                         object.getString("17.00-18.00")
                         );
-                System.out.println("roomCalender" + roomCalender);
+                //System.out.println("roomCalender" + roomCalender);
 
                 table.add(roomCalender);
 

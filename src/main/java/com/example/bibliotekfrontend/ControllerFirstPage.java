@@ -99,7 +99,7 @@ public class ControllerFirstPage implements Initializable {
     @FXML
     private void cChooseGenreForPopularBooks(ActionEvent actionEvent) {
         displayPopularBooksListView.getItems().clear();
-        responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + chooseGenrePopularBooks.getSelectionModel().getSelectedItem()); // input ska vara book_genre
+        responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + u.encodeToURL((String) chooseGenrePopularBooks.getSelectionModel().getSelectedItem())); // input ska vara book_genre
         responseForPopularBooks = u.trimResponse(responseForPopularBooks);
 
 
@@ -119,8 +119,9 @@ public class ControllerFirstPage implements Initializable {
         chooseGenrePopularBooks.getItems().addAll("Alla", "Action & Äventyr", "Deckare", "Drama", "Fantasy", "Filosofi & Religion", "Komedi", "Manga", "Mat & Dryck", "Resor", "Thriller", "Ungdom", "Vetenskap & Teknik");
         chooseGenrePopularBooks.getSelectionModel().select("Alla");
 
+
         displayPopularBooksListView.getItems().clear();
-        responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + chooseGenrePopularBooks.getSelectionModel().getSelectedItem()); // input ska vara book_genre
+        responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + u.encodeToURL((String) chooseGenrePopularBooks.getSelectionModel().getSelectedItem())); // input ska vara book_genre
         System.out.println(responseForPopularBooks);
         responseForPopularBooks = u.trimResponse(responseForPopularBooks);
 

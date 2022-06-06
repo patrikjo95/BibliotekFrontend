@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRegister">
    <children>
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="169.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
 
@@ -34,7 +34,7 @@
          </font></Button>
       <Label alignment="CENTER" layoutX="100.0" layoutY="203.0" prefHeight="25.0" prefWidth="121.0" text="ÅÅÅÅMMDDXXXX" />
       <Label layoutX="120.0" layoutY="250.0" prefHeight="25.0" prefWidth="101.0" text="Fyrsiffrigt PIN" />
-      <Label fx:id="pinErrorLabel" layoutX="205.0" layoutY="231.0" prefHeight="17.0" prefWidth="190.0" textFill="#e41e1e" />
-      <Label fx:id="registerLabel" alignment="CENTER" layoutX="155.0" layoutY="175.0" prefHeight="17.0" prefWidth="293.0" />
+      <Label fx:id="pinErrorLabel" alignment="CENTER" layoutX="104.0" layoutY="231.0" prefHeight="17.0" prefWidth="398.0" textFill="#e41e1e" />
+      <Label fx:id="registerLabel" alignment="CENTER" layoutX="103.0" layoutY="175.0" prefHeight="17.0" prefWidth="398.0" />
    </children>
 </AnchorPane>
