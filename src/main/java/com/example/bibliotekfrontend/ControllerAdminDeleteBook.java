@@ -5,6 +5,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -18,10 +19,20 @@ import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.Scanner;
 
-public class ControllerAdminDeleteBook {
+public class ControllerAdminDeleteBook{
 
+    @FXML
+    private Label errorISBN;
+    @FXML
+    private Button closeButtonID;
     @FXML
     private AnchorPane helpPopUp;
     @FXML
@@ -40,7 +51,6 @@ public class ControllerAdminDeleteBook {
     private TextField searchBooksTextField;
     @FXML
     private TextField bookIDTextField;
-
     @FXML
     private TextField inputISBN_TextField;
     @FXML
@@ -57,7 +67,7 @@ public class ControllerAdminDeleteBook {
     ConnectionManager connectionManager = new ConnectionManager();
     JSONObject object = new JSONObject();
     public String selected_ISBN_book;
-
+    public String selected_ISBN_book_from_file;
     @FXML
     private void cSearchBooksButton(ActionEvent event) {
         populateListViewDeleteBooks();
@@ -66,6 +76,7 @@ public class ControllerAdminDeleteBook {
 
     public void populateListViewDeleteBooks() {
         Platform.runLater(() -> {
+            System.out.println(searchBookList);
             searchBookList.requestFocus();
             String input = u.encodeToURL(searchBooksTextField.getText());
             searchBookList.getItems().clear();
@@ -136,24 +147,41 @@ public class ControllerAdminDeleteBook {
     private void cDeleteBookISBN_Button(ActionEvent event) throws IOException {
         Application a = new Application();
         selected_ISBN_book = u.encodeToURL(inputISBN_TextField.getText());
+        System.out.println(selected_ISBN_book + "hej");
+        try {
+            FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/selectedISBNToDelete.txt");
+            myWriter.write(selected_ISBN_book);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
         response = connectionManager.sendGetRequest("/delete_book_ISBN/?selected_ISBN_book=" + selected_ISBN_book);
         System.out.println(response);
         if (response.contains("is not int")) {
-            deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.RED);
-            deleteBookErrorLabel.setText("Var god skriv enbart siffror.");
+            errorISBN.setVisible(true);
+            errorISBN.setTextFill(Color.RED);
+            errorISBN.setText("Var god skriv enbart siffror.");
         } else if (response.contains("ISBN Does not exist")) {
-            deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.RED);
-            deleteBookErrorLabel.setText("Detta ISBN finns ej.");
+            errorISBN.setVisible(true);
+            errorISBN.setTextFill(Color.RED);
+            errorISBN.setText("Detta ISBN finns ej.");
         } else if (response.contains("Borrowed books isbn")) {
-            deleteBookErrorLabel.setVisible(true);
-            deleteBookErrorLabel.setTextFill(Color.RED);
-            deleteBookErrorLabel.setText("Detta ISBN har utlånade bok/böcker för tillfället.");
+            errorISBN.setVisible(true);
+            errorISBN.setTextFill(Color.RED);
+            errorISBN.setText("Detta ISBN har utlånade bok/böcker för tillfället.");
         } else if (response.contains("success")) {
             System.out.println("hej");
             System.out.println(response);
-            a.openPopup("areYouSureYouWantToDelete.fxml");
+            a.openPopup2("areYouSureYouWantToDelete.fxml");
+            try {
+                File file = new File("src/main/resources/com/example/bibliotekfrontend/selectedISBNToDelete.txt");
+                Scanner scanner = new Scanner(file);
+                selected_ISBN_book_from_file = scanner.next();
+            } catch (FileNotFoundException ex) {
+                System.err.println(ex);
+            }
         }
         populateListViewDeleteBooks();
     }
@@ -170,14 +198,28 @@ public class ControllerAdminDeleteBook {
 
     @FXML
     private void cDeleteAllBooksWithThisISBN(ActionEvent event) {
-        connectionManager.sendGetRequest("/yes_delete/?ISBN=" + selected_ISBN_book);
+        try {
+            File file = new File("src/main/resources/com/example/bibliotekfrontend/selectedISBNToDelete.txt");
+            Scanner scanner = new Scanner(file);
+            selected_ISBN_book_from_file = scanner.next();
+        } catch (FileNotFoundException ex) {
+            System.err.println(ex);
+        }
+        response = connectionManager.sendGetRequest("/yes_delete/?ISBN=" + selected_ISBN_book_from_file);
+        Stage stage = (Stage) closeButtonID.getScene().getWindow();
+        stage.close();
 
     }
     @FXML
     private void cGoBackToDeleteBook(ActionEvent event) throws IOException {
         Application a = new Application();
         a.changeScene("AdminDeleteBook.fxml");
+        Stage stage = (Stage) closeButtonID.getScene().getWindow();
+        stage.close();
+
     }
+
+
 
     /*
     private void populateListViewCustomerBorrowedBooks() {
