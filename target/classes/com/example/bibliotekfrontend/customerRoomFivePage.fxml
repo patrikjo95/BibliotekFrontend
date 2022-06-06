@@ -6,38 +6,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomFivePage">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomFivePage">
    <children>
       <Text layoutX="207.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 5" underline="true">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
       <ImageView fitHeight="250.0" fitWidth="320.0" layoutX="140.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Rum5.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="RoomFive" layoutX="14.0" layoutY="510.0" mnemonicParsing="false" onAction="#cBackFromRoomFiveToCustomerScheduleRoom" text="Tillbaks">
+      <Button fx:id="RoomFive" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomFiveToCustomerScheduleRoom" text="Tillbaka">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Button>
-      <TableView fx:id="tableCalender" layoutX="-7.0" layoutY="254.0" prefHeight="200.0" prefWidth="609.0">
+      <TableView fx:id="tableCalender" layoutX="14.0" layoutY="265.0" prefHeight="200.0" prefWidth="563.0">
         <columns>
-          <TableColumn fx:id="col_Date" prefWidth="75.0" text="Date" />
-          <TableColumn fx:id="col_0910" prefWidth="75.0" text="09.00-10.00" />
-            <TableColumn fx:id="col_1011" prefWidth="75.0" text="10.00-11.00" />
-            <TableColumn fx:id="col_1112" prefWidth="75.0" text="11.00-12.00" />
-            <TableColumn fx:id="col_1213" prefWidth="75.0" text="12.00-13.00" />
-            <TableColumn fx:id="col_1314" prefWidth="75.0" text="13.00-14.00" />
-            <TableColumn fx:id="col_1415" prefWidth="75.0" text="14.00-15.00" />
-            <TableColumn fx:id="col_1516" prefWidth="75.0" text="15.00-16.00" />
-            <TableColumn fx:id="col_1617" prefWidth="75.0" text="16.00-17.00" />
-            <TableColumn fx:id="col_1718" prefWidth="75.0" text="17.00-18.00" />
+          <TableColumn fx:id="col_Date" prefWidth="45.0" text="Date" />
+          <TableColumn fx:id="col_0910" prefWidth="73.0" text="09.00-10.00" />
+            <TableColumn fx:id="col_1011" prefWidth="73.0" text="10.00-11.00" />
+            <TableColumn fx:id="col_1112" prefWidth="71.0" text="11.00-12.00" />
+            <TableColumn fx:id="col_1213" prefWidth="73.0" text="12.00-13.00" />
+            <TableColumn fx:id="col_1314" prefWidth="74.0" text="13.00-14.00" />
+            <TableColumn fx:id="col_1415" prefWidth="74.0" text="14.00-15.00" />
+            <TableColumn fx:id="col_1516" prefWidth="73.0" text="15.00-16.00" />
+            <TableColumn fx:id="col_1617" minWidth="4.0" prefWidth="30.0" text="16.00-17.00" />
+            <TableColumn fx:id="col_1718" prefWidth="119.0" text="17.00-18.00" />
         </columns>
       </TableView>
    </children>

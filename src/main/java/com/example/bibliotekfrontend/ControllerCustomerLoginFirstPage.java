@@ -24,7 +24,8 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
     private String response;
     ConnectionManager connectionManager = new ConnectionManager();
     JSONObject object = new JSONObject();
-
+    @FXML
+    private Label customerLoggedInAsDetails;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -34,47 +35,20 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
             File file = new File("src/main/resources/com/example/bibliotekfrontend/customer_pnr_txt_file.txt");
             Scanner scanner = new Scanner(file);
             customer_pnr_from_file = scanner.next();
-            //while (scanner.hasNext()) {
-            //    customer_pnr_from_file = scanner.next()
-            //}
-            //customer_pnr_from_file = scanner.hasNext();
-            //customer_pnr_from_file.appendText()
 
-            // YourTextArea.appendText(s.nextInt() + " ");
         } catch (FileNotFoundException ex) {
             System.err.println(ex);
         }
-        /*
-        catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-         */
-        //
+
         customerLoggedInAsDetails.setText("You are logged in as: " + customer_pnr_from_file);
         customerLoggedInAsDetails.setVisible(true);
     }
 
-    @FXML
-    private Label customerLoggedInAsDetails;
-
-
-    @FXML
-    private void showCustomerLoginPNR(MouseEvent mouseEvent) {
-        //customerLoggedInAsDetails.setVisible(true);
-        //customerLoggedInAsDetails.setText(); //hämta pnr från txt
-    }
-
-    //showCustomerLoginPNR();
-
-    @FXML
-    private void cGoToShowBookPage(ActionEvent event) {
-    }
 
     @FXML
     private void cGoToRoomFirstPage(ActionEvent event) throws IOException {
         Application a = new Application();
 
-        // Aktivera Store procedure one_month_calender
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("customerScheduleRoom.fxml"));
         Parent root = loader.load();
@@ -110,6 +84,4 @@ public class ControllerCustomerLoginFirstPage implements Initializable {
         Application a = new Application();
         a.changeScene("customerMyPage.fxml");
     }
-
-
 }
