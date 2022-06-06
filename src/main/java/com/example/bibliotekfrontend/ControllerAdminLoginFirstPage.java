@@ -44,6 +44,8 @@ public class ControllerAdminLoginFirstPage implements Initializable {
 
     @FXML
     private void cGoToUpdateBookPage(ActionEvent event) throws IOException {
+        Application a = new Application();
+        a.changeScene("adminUpdateBook.fxml");
     }
 
     @FXML
@@ -51,6 +53,7 @@ public class ControllerAdminLoginFirstPage implements Initializable {
         Application a = new Application();
         a.changeScene("adminDeleteBook.fxml");
     }
+
 
 
     @FXML
