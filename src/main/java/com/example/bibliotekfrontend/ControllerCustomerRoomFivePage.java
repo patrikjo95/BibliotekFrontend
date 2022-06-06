@@ -108,7 +108,6 @@ public class ControllerCustomerRoomFivePage implements Initializable {
 
         }
 
-//return items;
         System.out.println("Table:" + table);
         return table;
     }

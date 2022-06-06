@@ -92,11 +92,8 @@ public class ControllerAdminSearchCustomer implements Initializable {
     @FXML
     private void cReturnBookAsAdmin(ActionEvent event) {
         System.out.println(selectedBookID);
-        System.out.println("T7");
         response = connectionManager.sendGetRequest("/return_book/?book_id=" + selectedBookID);
-        System.out.println("T5");
         System.out.println(response);
-        System.out.println("T6");
         populateListViewCustomerBorrowedBooks(personnummerToCustomer);
     }
 
@@ -110,7 +107,6 @@ public class ControllerAdminSearchCustomer implements Initializable {
         listViewBorrowedBooksSpecificCustomer.getItems().clear();
         response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_input);
         System.out.println(response);
-        //listViewBorrowedBooksSpecificCustomer.;
         if (response.contains("wrong pnr")) {
             adminSearchCustPNR_Error.setVisible(true);
             adminSearchCustPNR_Error.setText("Felaktigt personnummer!");
@@ -120,7 +116,6 @@ public class ControllerAdminSearchCustomer implements Initializable {
 
             response = utility.trimResponse(response);
             System.out.println(response);
-            // nedan error
             JSONArray array = new JSONArray(response);
             System.out.println(array);
 

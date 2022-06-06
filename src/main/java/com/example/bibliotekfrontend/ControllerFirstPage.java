@@ -67,7 +67,6 @@ public class ControllerFirstPage implements Initializable {
             searchBookList.getItems().clear();
             response = connectionManager.sendGetRequest("/search_for_a_book_everyone?check_book=" + input);
             response = u.trimResponse(response);
-            //System.out.println("Response: " + response);
 
             JSONArray array = new JSONArray(response);
 
@@ -84,46 +83,7 @@ public class ControllerFirstPage implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         populatePopularTable();
-        // genre choice box:
 
-        /*
-        changeGenreChoiceBox.getItems().removeAll(changeGenreChoiceBox.getItems());
-        changeGenreChoiceBox.getItems().addAll("Alla", "Action & Äventyr", "Deckare", "Drama", "Fantasy", "Filosofi & Religion", "Komedi", "Manga", "Mat & Dryck", "Resor", "Thriller", "Ungdom", "Vetenskap & Teknik");
-        changeGenreChoiceBox.getSelectionModel().select("Alla");
-
-        // inte färdig. går inte att byta genre.
-
-        // changeGenreChoiceBox.getSelectionModel().getSelectedItem();
-        // changeGenreChoiceBox.getItems()
-
-        // boolean choiceBoxSelection = true;
-        // while (choiceBoxSelection == true) {
-
-        //String input = u.encodeToURL(searchBooksTextField.getText());
-        System.out.println("1");
-        displayPopularBooksListView.getItems().clear();
-        System.out.println("2");
-        responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + changeGenreChoiceBox.getSelectionModel().getSelectedItem()); // input ska vara book_genre
-        System.out.println("3");
-        responseForPopularBooks = u.trimResponse(responseForPopularBooks);
-
-        System.out.println("4");
-        // System.out.println("Response: " + responseForPopularBooks);
-
-        JSONArray array = new JSONArray(responseForPopularBooks);
-        System.out.println("5");
-
-
-        for (int i = 0; i < array.length(); i++) {
-            System.out.println("6");
-            JSONObject object = array.getJSONObject(i);
-            System.out.println("7");
-            displayPopularBooksListView.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "År: " + object.getString("book_year") + " | " + "Genre: " + object.getString("book_genre"));
-            System.out.println("8");
-        }
-        //}
-
-         */
     }
 
 
@@ -132,30 +92,19 @@ public class ControllerFirstPage implements Initializable {
 
     @FXML
     private void cChooseGenreForPopularBooks(ActionEvent actionEvent) {
-        // chooseGenrePopularBooks.getItems().removeAll(chooseGenrePopularBooks.getItems());
-        // chooseGenrePopularBooks.getItems().addAll("Alla", "Action & Äventyr", "Deckare", "Drama", "Fantasy", "Filosofi & Religion", "Komedi", "Manga", "Mat & Dryck", "Resor", "Thriller", "Ungdom", "Vetenskap & Teknik");
-        // chooseGenrePopularBooks.getSelectionModel().select("Alla");
-
-        System.out.println("1");
         displayPopularBooksListView.getItems().clear();
-        System.out.println("2");
         responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + chooseGenrePopularBooks.getSelectionModel().getSelectedItem()); // input ska vara book_genre
-        System.out.println("3");
         responseForPopularBooks = u.trimResponse(responseForPopularBooks);
 
-        System.out.println("4");
-        // System.out.println("Response: " + responseForPopularBooks);
 
         JSONArray array = new JSONArray(responseForPopularBooks);
-        System.out.println("5");
 
 
         for (int i = 0; i < array.length(); i++) {
-            System.out.println("6");
+
             JSONObject object = array.getJSONObject(i);
-            System.out.println("7");
             displayPopularBooksListView.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "År: " + object.getString("book_year") + " | " + "Genre: " + object.getString("book_genre"));
-            System.out.println("8");
+
         }
     }
 
@@ -164,30 +113,19 @@ public class ControllerFirstPage implements Initializable {
         chooseGenrePopularBooks.getItems().addAll("Alla", "Action & Äventyr", "Deckare", "Drama", "Fantasy", "Filosofi & Religion", "Komedi", "Manga", "Mat & Dryck", "Resor", "Thriller", "Ungdom", "Vetenskap & Teknik");
         chooseGenrePopularBooks.getSelectionModel().select("Alla");
 
-        System.out.println("1");
         displayPopularBooksListView.getItems().clear();
-        System.out.println("2");
         responseForPopularBooks = connectionManager.sendGetRequest("/show_popular_books_view?book_genre=" + chooseGenrePopularBooks.getSelectionModel().getSelectedItem()); // input ska vara book_genre
         System.out.println(responseForPopularBooks);
-        System.out.println("3");
         responseForPopularBooks = u.trimResponse(responseForPopularBooks);
-
-        System.out.println("4");
-        // System.out.println("Response: " + responseForPopularBooks);
-
 
 
         if (responseForPopularBooks.contains("empty")) {
             System.out.println("This genre is not popular.");
         } else {
             JSONArray array = new JSONArray(responseForPopularBooks);
-            System.out.println("5");
             for (int i = 0; i < array.length(); i++) {
-                System.out.println("6");
                 JSONObject object = array.getJSONObject(i);
-                System.out.println("7");
                 displayPopularBooksListView.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "År: " + object.getString("book_year") + " | " + "Genre: " + object.getString("book_genre"));
-                System.out.println("8");
             }
         }
     }
