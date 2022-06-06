@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminDeleteBook">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminDeleteBook">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="10.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="64.0" />
       <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="169.0" layoutY="-139.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="340.0" layoutX="19.0" layoutY="24.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="210.0" />
-      <TextField fx:id="searchBooksTextField" layoutX="38.0" layoutY="51.0" promptText="Sök" />
-      <TextField fx:id="bookIDTextField" layoutX="39.0" layoutY="194.0" promptText="ID" />
-      <Button fx:id="deleteBookButton" layoutX="76.0" layoutY="224.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Radera bok">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e8b87d" height="321.0" layoutX="19.0" layoutY="24.0" stroke="#544f4f" strokeType="OUTSIDE" strokeWidth="5.0" width="210.0" />
+      <TextField fx:id="searchBooksTextField" layoutX="39.0" layoutY="51.0" promptText="Sök" />
+      <TextField fx:id="bookIDTextField" layoutX="39.0" layoutY="151.0" promptText="ID" />
+      <Button fx:id="deleteBookButton" layoutX="77.0" layoutY="183.0" mnemonicParsing="false" onAction="#cDeleteBookButton" text="Radera bok">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
@@ -30,14 +30,14 @@
             <Font name="System Italic" size="12.0" />
          </font></Button>
       <ListView fx:id="searchBookList" layoutX="242.0" layoutY="14.0" onMouseClicked="#cListView" prefHeight="460.0" prefWidth="344.0" />
-      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="141.0" prefHeight="46.0" prefWidth="211.0" text="RADERA BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
+      <Label fx:id="deleteBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="118.0" prefHeight="25.0" prefWidth="210.0" text="RADERA BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="30.0" prefHeight="17.0" prefWidth="187.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Text fx:id="helpText" layoutX="194.0" layoutY="68.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
-      <TextField fx:id="inputISBN_TextField" layoutX="39.0" layoutY="303.0" promptText="ISBN" />
-      <Button layoutX="75.0" layoutY="334.0" mnemonicParsing="false" onAction="#cDeleteBookISBN_Button" text="Radera titel">
+      <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="30.0" prefHeight="17.0" prefWidth="204.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
+      <Text fx:id="helpText" layoutX="195.0" layoutY="68.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
+      <TextField fx:id="inputISBN_TextField" layoutX="39.0" layoutY="265.0" promptText="ISBN" />
+      <Button layoutX="76.0" layoutY="299.0" mnemonicParsing="false" onAction="#cDeleteBookISBN_Button" text="Radera titel">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
@@ -48,7 +48,9 @@
             <Label layoutX="6.0" layoutY="27.0" prefHeight="25.0" prefWidth="344.0" text="Skriv ISBN och nummer i formatet &quot;ISBN x&quot; för att söka på ISBN" />
          </children>
       </AnchorPane>
-      <Label layoutX="55.0" layoutY="236.0" prefHeight="60.0" prefWidth="159.0" text="RADERA TITEL ERROR" textFill="RED" visible="false" />
-      <Label fx:id="errorISBN" layoutX="23.0" layoutY="252.0" prefHeight="46.0" prefWidth="204.0" wrapText="true" />
+      <Label fx:id="errorISBN" alignment="CENTER" layoutX="22.0" layoutY="213.0" prefHeight="46.0" prefWidth="204.0" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
    </children>
 </AnchorPane>
