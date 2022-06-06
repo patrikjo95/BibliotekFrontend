@@ -107,10 +107,8 @@ public class ControllerFirstPage implements Initializable {
 
 
         for (int i = 0; i < array.length(); i++) {
-
             JSONObject object = array.getJSONObject(i);
             displayPopularBooksListView.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "År: " + object.getString("book_year") + " | " + "Genre: " + object.getString("book_genre"));
-
         }
     }
 
