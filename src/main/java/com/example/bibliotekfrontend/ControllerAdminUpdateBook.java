@@ -68,7 +68,6 @@ public class ControllerAdminUpdateBook {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
 
-                //String selectedBookString = borrowBookListView.getSelectionModel().getSelectedItem();
                 selectedBook = searchBookList.getSelectionModel().getSelectedItem();
                 String selectedISBN = u.getIsbnFromSelectedString(selectedBook);
                 ISBNTextField.setText(selectedISBN);

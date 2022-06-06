@@ -84,7 +84,6 @@ public class ControllerAdminDeleteBook{
 
             response = connectionManager.sendGetRequest("/search_for_a_book_admin?check_book=" + input);
             response = u.trimResponse(response);
-            //System.out.println("Response: " + response);
 
             JSONArray array = new JSONArray(response);
 
@@ -100,7 +99,6 @@ public class ControllerAdminDeleteBook{
 
     @FXML
     private void cListView(MouseEvent event) {
-        //isbnTextField.setText(String.valueOf(object.getInt("ISBN")));
         searchBookList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
@@ -148,7 +146,6 @@ public class ControllerAdminDeleteBook{
     private void cDeleteBookISBN_Button(ActionEvent event) throws IOException {
         Application a = new Application();
         selected_ISBN_book = u.encodeToURL(inputISBN_TextField.getText());
-        System.out.println(selected_ISBN_book + "hej");
         try {
             FileWriter myWriter = new FileWriter("src/main/resources/com/example/bibliotekfrontend/selectedISBNToDelete.txt");
             myWriter.write(selected_ISBN_book);
@@ -173,7 +170,6 @@ public class ControllerAdminDeleteBook{
             errorISBN.setTextFill(Color.RED);
             errorISBN.setText("Detta ISBN har utlånade bok/böcker för tillfället.");
         } else if (response.contains("success")) {
-            System.out.println("hej");
             System.out.println(response);
             a.openPopup2("areYouSureYouWantToDelete.fxml");
             try {
@@ -219,28 +215,4 @@ public class ControllerAdminDeleteBook{
         stage.close();
 
     }
-
-
-
-    /*
-    private void populateListViewCustomerBorrowedBooks() {
-        listViewBorrowedBooksSpecificCustomer.getItems().clear();
-        response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_file);
-        System.out.println(response);
-        //listViewBorrowedBooksSpecificCustomer.;
-
-        response = utility.trimResponse(response);
-        System.out.println(response);
-        // nedan error
-        JSONArray array = new JSONArray(response);
-        System.out.println(array);
-
-        for (int i = 0; i < array.length(); i++) {
-            object = array.getJSONObject(i);
-            System.out.println(object);
-            listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
-            System.out.println(listViewBorrowedBooksSpecificCustomer);
-        }
-    }
-     */
 }

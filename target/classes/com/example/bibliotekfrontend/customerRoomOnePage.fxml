@@ -7,40 +7,45 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomOnePage">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerCustomerRoomOnePage">
    <children>
-      <Text layoutX="239.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RUM 1" underline="true">
+      <CubicCurve controlX1="112.0" controlX2="1.1666717529296875" controlY1="8.0" controlY2="641.7183837890625" endX="430.0" endY="688.0" fill="WHITE" layoutX="169.0" layoutY="-140.0" startX="-182.8333282470703" startY="140.1525115966797" stroke="BLACK" strokeWidth="0.0" />
+      <Text layoutX="115.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grupprum Vattenmelon" underline="true">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <ImageView fitHeight="170.0" fitWidth="220.0" layoutX="193.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="170.0" fitWidth="220.0" layoutX="194.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/Rum1.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="BackFromPage1" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomOneToCustomerScheduleRoom" text="Tillbaks">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="542.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="46.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="11.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="65.0" />
+      <Button fx:id="BackFromPage1" layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBackFromRoomOneToCustomerScheduleRoom" text="Tillbaka">
          <font>
             <Font name="System Italic" size="12.0" />
          </font></Button>
-      <TableView fx:id="tableCalender" layoutX="-8.0" layoutY="245.0" onMouseClicked="#clickedColumn" prefHeight="238.0" prefWidth="622.0">
+      <TableView fx:id="tableCalender" layoutY="236.0" onMouseClicked="#clickedColumn" prefHeight="265.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="col_Date" editable="false" prefWidth="62.3999924659729" text="Date" />
-            <TableColumn fx:id="col_0910" editable="false" prefWidth="78.39995956420898" text="09.00-10.00" />
-            <TableColumn fx:id="col_1011" editable="false" minWidth="0.0" prefWidth="54.4000244140625" text="10.00-11.00" />
-            <TableColumn fx:id="col_1112" editable="false" prefWidth="60.0" text="11.00-12.00" />
-            <TableColumn fx:id="col_1213" editable="false" prefWidth="60.0" text="12.00-13.00" />
-            <TableColumn fx:id="col_1314" editable="false" prefWidth="60.0" text="13.00-14.00" />
-            <TableColumn fx:id="col_1415" editable="false" prefWidth="60.0" text="14.00-15.00" />
-            <TableColumn fx:id="col_1516" editable="false" prefWidth="60.0" text="15.00-16.00" />
-            <TableColumn fx:id="col_1617" editable="false" prefWidth="60.0" text="16.00-17.00" />
-            <TableColumn fx:id="col_1718" editable="false" prefWidth="60.0" text="17.00-18.00" />
+          <TableColumn fx:id="col_Date" editable="false" prefWidth="71.0" resizable="false" text="Datum" />
+            <TableColumn fx:id="col_0910" editable="false" prefWidth="71.0" resizable="false" text="09.00-10.00" />
+            <TableColumn fx:id="col_1011" editable="false" minWidth="0.0" prefWidth="71.0" resizable="false" text="10.00-11.00" />
+            <TableColumn fx:id="col_1112" editable="false" prefWidth="71.0" resizable="false" text="11.00-12.00" />
+            <TableColumn fx:id="col_1213" editable="false" minWidth="0.0" prefWidth="71.0" resizable="false" text="12.00-13.00" />
+            <TableColumn fx:id="col_1314" editable="false" prefWidth="71.0" resizable="false" text="13.00-14.00" />
+            <TableColumn fx:id="col_1415" editable="false" prefWidth="71.0" resizable="false" text="14.00-15.00" />
+            <TableColumn fx:id="col_1516" editable="false" prefWidth="71.0" resizable="false" text="15.00-16.00" />
+            <TableColumn fx:id="col_1617" editable="false" prefWidth="71.0" resizable="false" text="16.00-17.00" />
+            <TableColumn fx:id="col_1718" editable="false" prefWidth="71.0" resizable="false" text="17.00-18.00" />
         </columns>
       </TableView>
-      <Button fx:id="BookRoom" layoutX="413.0" layoutY="498.0" mnemonicParsing="false" onAction="#cBookRoomButton" text="Boka" />
+      <Button fx:id="BookRoom" layoutX="544.0" layoutY="511.0" mnemonicParsing="false" onAction="#cBookRoomButton" text="Boka" />
       <Label fx:id="errorLabel" layoutX="211.0" layoutY="489.0" textFill="#e40505">
          <font>
             <Font name="System Bold" size="12.0" />

@@ -92,9 +92,6 @@ public class ControllerAdminLoginFirstPage implements Initializable {
         adminLoggedInAsEmail.setVisible(true);
     }
 
-    @FXML
-    private ListView listViewBorrowedBooksSpecificCustomer;
-
     public void cGoToBorrowedBooksPage(ActionEvent actionEvent) throws IOException {
         Application application = new Application();
         application.changeScene("adminAllBorrowedBooksPage.fxml");
