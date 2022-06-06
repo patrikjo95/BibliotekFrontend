@@ -88,7 +88,7 @@ public class ControllerAdminLoginFirstPage implements Initializable {
         } catch (FileNotFoundException ex) {
             System.err.println(ex);
         }
-        adminLoggedInAsEmail.setText("You are logged in as: " + adminEmail);
+        adminLoggedInAsEmail.setText("Du är inloggad som: " + adminEmail);
         adminLoggedInAsEmail.setVisible(true);
     }
 

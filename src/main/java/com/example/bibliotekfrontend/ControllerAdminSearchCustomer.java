@@ -61,6 +61,14 @@ public class ControllerAdminSearchCustomer implements Initializable {
         // för att mata in PNR som ska skickas till databasen
         populateListViewCustomerBorrowedBooks(personnummerToCustomer); // personnummer som argument från textfield: adminSearchCustPNR_Input
 
+        listViewBorrowedBooksSpecificCustomer.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                selectedBookString = (String) listViewBorrowedBooksSpecificCustomer.getSelectionModel().getSelectedItem();
+                selectedBookID = utility.getBookIDFromSelectedString(selectedBookString);
+            }
+        });
+
     }
 
     @Override
@@ -91,9 +99,7 @@ public class ControllerAdminSearchCustomer implements Initializable {
 
     @FXML
     private void cReturnBookAsAdmin(ActionEvent event) {
-        System.out.println(selectedBookID);
         response = connectionManager.sendGetRequest("/return_book/?book_id=" + selectedBookID);
-        System.out.println(response);
         populateListViewCustomerBorrowedBooks(personnummerToCustomer);
     }
 
@@ -106,7 +112,6 @@ public class ControllerAdminSearchCustomer implements Initializable {
     private void populateListViewCustomerBorrowedBooks(String customer_pnr_from_input) {
         listViewBorrowedBooksSpecificCustomer.getItems().clear();
         response = connectionManager.sendGetRequest("/which_books_are_borrowed?customer_pnr_live=" + customer_pnr_from_input);
-        System.out.println(response);
         if (response.contains("wrong pnr")) {
             adminSearchCustPNR_Error.setVisible(true);
             adminSearchCustPNR_Error.setText("Felaktigt personnummer!");
@@ -115,15 +120,13 @@ public class ControllerAdminSearchCustomer implements Initializable {
             adminSearchCustPNR_Error.setVisible(false);
 
             response = utility.trimResponse(response);
-            System.out.println(response);
             JSONArray array = new JSONArray(response);
-            System.out.println(array);
+
 
             for (int i = 0; i < array.length(); i++) {
                 object = array.getJSONObject(i);
-                System.out.println(object);
                 listViewBorrowedBooksSpecificCustomer.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_year") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
-                System.out.println(listViewBorrowedBooksSpecificCustomer);
+
             }
         }
     }
