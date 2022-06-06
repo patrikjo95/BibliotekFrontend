@@ -8,7 +8,6 @@
 <?import javafx.scene.shape.CubicCurve?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminUpdateBook">
    <children>
@@ -32,7 +31,6 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <Label fx:id="searchBookErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="30.0" prefHeight="17.0" prefWidth="204.0" text="SÖK BOK ERROR" textAlignment="CENTER" textFill="RED" visible="false" />
-      <Text fx:id="helpText" layoutX="195.0" layoutY="68.0" onMouseEntered="#cHelpPopup" onMouseExited="#cHelpPopupClose" strokeType="OUTSIDE" strokeWidth="0.0" text="Hjälp" />
       <Button layoutX="61.0" layoutY="219.0" mnemonicParsing="false" onAction="#cUpdateBookButton" text="Uppdatera Antal">
          <font>
             <Font name="System Italic" size="12.0" />

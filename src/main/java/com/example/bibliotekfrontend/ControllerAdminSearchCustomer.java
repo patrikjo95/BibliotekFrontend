@@ -74,7 +74,7 @@ public class ControllerAdminSearchCustomer implements Initializable {
         } catch (FileNotFoundException ex) {
             System.err.println(ex);
         }
-        adminLoggedInAsEmail.setText("You are logged in as: " + adminEmail);
+        adminLoggedInAsEmail.setText("Du är inloggad som: " + adminEmail);
         adminLoggedInAsEmail.setVisible(true);
     }
 
@@ -122,7 +122,7 @@ public class ControllerAdminSearchCustomer implements Initializable {
             for (int i = 0; i < array.length(); i++) {
                 object = array.getJSONObject(i);
                 System.out.println(object);
-                listViewBorrowedBooksSpecificCustomer.getItems().add("Title: " + object.getString("book_title") + " | " + "Author: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_genre") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
+                listViewBorrowedBooksSpecificCustomer.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "Genre: " + object.getString("book_year") + " | " + "Bok ID: " + object.getInt("ID_book") + " | " + "Återlämnas senast: " + object.getString("return_date"));
                 System.out.println(listViewBorrowedBooksSpecificCustomer);
             }
         }
