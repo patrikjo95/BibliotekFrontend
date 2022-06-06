@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,6 +24,10 @@ import com.google.gson.Gson;
 public class ControllerFirstPage implements Initializable {
 
 
+    @FXML
+    private AnchorPane addressPopup;
+    @FXML
+    private AnchorPane openTimesPopup;
     private Gson gson = new Gson();
     Utility u = new Utility();
 
@@ -128,6 +134,27 @@ public class ControllerFirstPage implements Initializable {
                 displayPopularBooksListView.getItems().add("Titel: " + object.getString("book_title") + " | " + "Författare: " + object.getString("book_author") + " | " + "År: " + object.getString("book_year") + " | " + "Genre: " + object.getString("book_genre"));
             }
         }
+    }
+
+    @FXML
+    private void cOpenTimesOpen(MouseEvent mouseEvent) {
+        openTimesPopup.setVisible(true);
+    }
+
+    @FXML
+    private void cOpenTimesClose(MouseEvent mouseEvent) {
+        openTimesPopup.setVisible(false);
+
+    }
+
+    @FXML
+    private void cOpenAddress(MouseEvent mouseEvent) {
+        addressPopup.setVisible(true);
+    }
+
+    @FXML
+    private void cCloseAddress(MouseEvent mouseEvent) {
+        addressPopup.setVisible(false);
     }
 }
 
