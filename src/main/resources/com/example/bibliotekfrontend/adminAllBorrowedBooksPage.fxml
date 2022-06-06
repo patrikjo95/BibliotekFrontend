@@ -5,16 +5,18 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAllBorrowedBooksPage">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: c39351;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bibliotekfrontend.ControllerAdminAllBorrowedBooksPage">
    <children>
-      <Label layoutX="203.0" layoutY="14.0" prefHeight="27.0" prefWidth="194.0" text="Alla utlånade böcker">
+      <CubicCurve controlX1="163.49998474121094" controlX2="275.5" controlY1="275.6611633300781" controlY2="966.0675048828125" endX="543.6666870117188" endY="915.5631103515625" fill="WHITE" layoutX="54.0" layoutY="-364.0" startX="-54.00001525878906" startY="364.0" stroke="BLACK" strokeWidth="0.0" />
+      <Label alignment="CENTER" layoutX="177.0" layoutY="11.0" prefHeight="35.0" prefWidth="246.0" text="Alla utlånade böcker" underline="true">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="12.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAllBooksBackButton" text="Tillbaka" />
       <TableView fx:id="allBorrowedBooksTable" layoutX="12.0" layoutY="46.0" prefHeight="458.0" prefWidth="576.0">
         <columns>
           <TableColumn fx:id="PNRColumn" editable="false" prefWidth="93.0" text="Personnummer" />
@@ -25,5 +27,7 @@
             <TableColumn fx:id="returnDateColumn" editable="false" prefWidth="111.0" text="Återlämnas Senast" />
         </columns>
       </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#544f4f" height="30.0" layoutX="12.0" layoutY="509.0" stroke="#a87b41" strokeType="OUTSIDE" strokeWidth="5.0" width="61.0" />
+      <Button layoutX="14.0" layoutY="511.0" mnemonicParsing="false" onAction="#cAllBooksBackButton" text="Tillbaka" />
    </children>
 </AnchorPane>
